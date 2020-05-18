@@ -25,6 +25,7 @@ class DashboardPatientAdapter(viewModel: DashboardPatientViewModel) :
         model: Menus
     ) {
         binding.menus = model
+        binding.model = viewModel
     }
 
 }

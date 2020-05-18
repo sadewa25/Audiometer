@@ -17,4 +17,7 @@
     <string name="id_user_type_companion">1</string>
     <string name="success_">1</string>
     <string name="ic_item_dashboard">Ikon Item Dashboard</string>
+    <string name="menu_report">Laporan</string>
+    <string name="menu_history">Riwayat</string>
+    <string name="menu_profile">Profile</string>
 </resources>

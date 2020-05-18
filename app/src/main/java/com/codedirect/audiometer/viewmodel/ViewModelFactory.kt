@@ -13,16 +13,18 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
     @Volatile
     private var INSTANCE: ViewModelFactory? = null
 
-    private var mAcademyRepository: AppRepository? = null
+    private var appRepository: AppRepository? = null
+    private var application: Application? = null
 
-    constructor(mAcademyRepository: AppRepository?) : this() {
-        this.mAcademyRepository = mAcademyRepository
+    constructor(appRepository: AppRepository?, application: Application?) : this() {
+        this.appRepository = appRepository
+        this.application = application
     }
 
     fun getInstance(application: Application?): ViewModelFactory? {
         if (INSTANCE == null) {
             synchronized(ViewModelFactory::class.java) {
-                INSTANCE = ViewModelFactory(Injection.provideRepository(application))
+                INSTANCE = ViewModelFactory(Injection.provideRepository(application), application)
             }
         }
         return INSTANCE
@@ -30,9 +32,9 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            return LoginViewModel(mAcademyRepository) as T
+            return LoginViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(DashboardPatientViewModel::class.java)) {
-            return DashboardPatientViewModel() as T
+            return DashboardPatientViewModel(application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="menus"
             type="com.codedirect.audiometer.utils.models.Menus" />
+        <variable
+            name="model"
+            type="com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -15,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/margin_small"
         android:elevation="@dimen/margin_small"
+        android:onClick="@{() -> model.onItemClick(menus)}"
         app:cardCornerRadius="@dimen/margin_small">
 
         <androidx.constraintlayout.widget.ConstraintLayout
