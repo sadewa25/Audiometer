@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">SIMAPAN</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Masuk</string>
+    <string name="ic_splashscreen">Ikon Splashscreen</string>
+    <string name="network_unavailable">Tidak Ada Koneksi Internet</string>
+    <string name="login_page">Login Page</string>
+    <string name="ic_login">Ikon Login</string>
+    <string name="title_hospital">Rumah Sakit Dr. Soetomo</string>
+    <string name="title_hospital_desc"><![CDATA[Sistem Informasi Kondisi Pasien MDR-TB & COVID-19]]></string>
+    <string name="username">Username</string>
+    <string name="id_user_type_patient">0</string>
+    <string name="id_user_type_companion">1</string>
+    <string name="success_">1</string>
+    <string name="ic_item_dashboard">Ikon Item Dashboard</string>
+</resources>

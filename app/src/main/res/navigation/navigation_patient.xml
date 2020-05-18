@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_patient"
+    app:startDestination="@id/dashboardPatientFragment">
+
+    <fragment
+        android:id="@+id/dashboardPatientFragment"
+        android:name="com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientFragment"
+        android:label="fragment_dashboard_patient"
+        tools:layout="@layout/fragment_dashboard_patient" />
+</navigation>
