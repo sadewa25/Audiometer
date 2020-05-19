@@ -1,5 +1,6 @@
 package com.codedirect.audiometer.data.source.remote
 
+import com.codedirect.audiometer.data.source.remote.response.DataItems
 import com.codedirect.audiometer.data.source.remote.response.ResponseJSON
 import com.codedirect.audiometer.data.source.remote.response.Users
 import retrofit2.http.Body
@@ -11,5 +12,11 @@ interface API {
     @POST("user/api/login")
     suspend fun loginUsers(
         @Body data: Users
+    ): ResponseJSON
+
+    @Headers("API-Key: \$2a\$10\$0.WlAig6EVWThAKylQ5JEuoTp/QWvGRjiRSfzoxUu8VfkhEpNW2GK")
+    @POST("laporanGejala/api/create")
+    suspend fun createReportSymptoms(
+        @Body data: DataItems
     ): ResponseJSON
 }

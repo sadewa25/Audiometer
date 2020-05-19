@@ -4,13 +4,16 @@ import android.app.Application
 import androidx.databinding.ObservableInt
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.codedirect.audiometer.data.source.AppRepository
+import com.codedirect.audiometer.data.source.remote.response.DataItems
 import com.codedirect.audiometer.utils.common.Event
+import com.codedirect.audiometer.utils.common.Resource
+import kotlinx.coroutines.Dispatchers
 
 
 class ReportSymptomsViewModel(
-    private val repository: AppRepository?,
-    private val app: Application
+    private val repository: AppRepository?
 ) : ViewModel() {
 
     private val _openReportSymptoms by lazy { MutableLiveData<Event<Unit>>() }
@@ -73,6 +76,15 @@ class ReportSymptomsViewModel(
 
     fun getbreathlessOptionsSelected(): Int {
         return breathlessOptionsSelected.get()
+    }
+
+    fun createReportSymptoms(datas: DataItems) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = repository?.createReportSymptoms(datas)))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
     }
 
 }

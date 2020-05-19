@@ -224,7 +224,7 @@
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setnauseaOptionsSelected(checkedId)}"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setheadacheOptionsSelected(checkedId)}"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -252,7 +252,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setbreathlessOptionsSelected(checkedId)}"
             android:text="@string/breathless"
             android:textSize="@dimen/text_default_18"
             android:textStyle="bold"
@@ -267,6 +266,7 @@
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_small"
             android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setbreathlessOptionsSelected(checkedId)}"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -303,6 +303,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_breathless" />
+
+        <ProgressBar
+            android:id="@+id/loading_report_symptoms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primaryDarkColor"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,11 +1,7 @@
 package com.codedirect.audiometer.data.source.remote
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.codedirect.audiometer.data.source.remote.response.ResponseJSON
+import com.codedirect.audiometer.data.source.remote.response.DataItems
 import com.codedirect.audiometer.data.source.remote.response.Users
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 class RemoteRepository(private val apiService: RetrofitClient) {
     companion object {
@@ -20,4 +16,6 @@ class RemoteRepository(private val apiService: RetrofitClient) {
     }
 
     suspend fun loginUsers(datas: Users) = apiService.response().loginUsers(datas)
+    suspend fun createReportSymptoms(datas: DataItems) =
+        apiService.response().createReportSymptoms(datas)
 }
