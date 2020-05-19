@@ -40,7 +40,7 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
         } else if (modelClass.isAssignableFrom(ReportPatientViewModel::class.java)) {
             return ReportPatientViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(ReportSymptomsViewModel::class.java)) {
-            return ReportSymptomsViewModel(appRepository) as T
+            return ReportSymptomsViewModel(appRepository, application) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

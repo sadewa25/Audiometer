@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.codedirect.audiometer.R
 import com.codedirect.audiometer.databinding.FragmentDashboardPatientBinding
+import com.codedirect.audiometer.utils.common.EventObserver
 import com.codedirect.audiometer.utils.findNavController
 import kotlinx.android.synthetic.main.fragment_dashboard_patient.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -44,8 +45,8 @@ class DashboardPatientFragment : Fragment() {
     }
 
     private fun setupObservers() {
-        model.openDashboardPatient.observe(viewLifecycleOwner, Observer {
-            when (it.peekContent().title) {
+        model.openDashboardPatient.observe(viewLifecycleOwner, EventObserver {
+            when (it.title) {
                 getString(R.string.menu_report) -> navigateToReportSymptoms()
             }
         })

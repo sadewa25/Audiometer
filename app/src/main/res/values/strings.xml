@@ -26,4 +26,13 @@
     <string name="title_status">Status: %1$s </string>
     <string name="title_skip_drugs" >Skip Obat: %1$s </string>
     <string name="report_needed">Laporkan Kebutuhan</string>
+    <string name="cough">Batuk</string>
+    <string name="yes_">Ya</string>
+    <string name="no_">Tidak</string>
+    <string name="fever">Demam</string>
+    <string name="limp">Lemas</string>
+    <string name="nausea">Mual</string>
+    <string name="headache">Pusing</string>
+    <string name="breathless">Sesak Nafas</string>
+    <string name="submit">Submit</string>
 </resources>

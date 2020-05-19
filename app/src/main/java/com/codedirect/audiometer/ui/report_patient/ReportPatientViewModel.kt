@@ -8,7 +8,18 @@ import com.codedirect.audiometer.utils.common.Event
 
 class ReportPatientViewModel(private val repository: AppRepository?) : ViewModel() {
 
-    val openReportPatientSymptoms: LiveData<Event<Unit>> = MutableLiveData()
-    val openReportPatientNeeded: LiveData<Event<Unit>> = MutableLiveData()
+    private val _openReportPatientSymptoms by lazy { MutableLiveData<Event<Unit>>() }
+    val openReportPatientSymptoms: MutableLiveData<Event<Unit>>
+        get() = _openReportPatientSymptoms
+    fun _openReportPatientSymptoms(){
+        _openReportPatientSymptoms.value = Event(Unit)
+    }
+
+    private val _openReportPatientNeeded by lazy { MutableLiveData<Event<Unit>>() }
+    val openReportPatientNeeded: MutableLiveData<Event<Unit>>
+        get() = _openReportPatientNeeded
+    fun _openReportPatientNeeded(){
+        _openReportPatientNeeded.value = Event(Unit)
+    }
 
 }

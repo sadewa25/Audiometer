@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="model"
             type="com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel" />
+
+        <variable
+            name="data"
+            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +20,289 @@
         android:layout_height="match_parent"
         tools:context=".ui.report_patient.report_symptoms.ReportSymptomsFragment">
 
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            app:layout_constraintBottom_toTopOf="@+id/gl_dashboard_report_patient"
+            app:layout_constraintStart_toStartOf="parent" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_dashboard_report_patient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <!--Cough-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_cough"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/cough"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_cough"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setCoughOptionsSelected(checkedId)}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_cough">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_cough_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_cough_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <!--Demam-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_fever"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/fever"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_cough" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_fever"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setfeverOptionsSelected(checkedId)}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_fever">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_fever_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_fever_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <!--Lemas-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_limp"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/limp"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_fever" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_limp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setlimpOptionsSelected(checkedId)}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_limp">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_limp_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_limp_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <!--Mual-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_nausea"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/nausea"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_limp" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_nausea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setnauseaOptionsSelected(checkedId)}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_nausea">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_nausea_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_nausea_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <!--Pusing-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_headache"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/headache"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_nausea" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_headache"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setnauseaOptionsSelected(checkedId)}"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_headache">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_headache_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_headache_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <!--Sesak-->
+        <TextView
+            android:id="@+id/tv_report_symptoms_breathless"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:onCheckedChanged="@{(group, checkedId) -> model.setbreathlessOptionsSelected(checkedId)}"
+            android:text="@string/breathless"
+            android:textSize="@dimen/text_default_18"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_headache" />
+
+        <RadioGroup
+            android:id="@+id/rg_report_symptoms_breathless"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_breathless">
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_breathless_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes_" />
+
+            <RadioButton
+                android:id="@+id/rb_report_symptoms_breathless_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no_" />
+        </RadioGroup>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_report_patient_needed"
+            style="@style/ButtonGeneralStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:onClick="@{() -> model._openReportSymptoms()}"
+            android:padding="@dimen/margin_small"
+            android:text="@string/submit"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:backgroundTint="@android:color/holo_green_dark"
+            app:cornerRadius="@dimen/margin_small"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_breathless" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
