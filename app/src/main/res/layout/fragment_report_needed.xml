@@ -36,7 +36,6 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.4" />
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/ti_report_needed_kind"
             style="@style/TextInputLayoutBoxStylePrimary"
