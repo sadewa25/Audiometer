@@ -5,5 +5,5 @@ import com.codedirect.audiometer.data.source.remote.response.ResponseJSON
 import com.codedirect.audiometer.data.source.remote.response.Users
 
 interface AppDataSource {
-    fun loginUsers(datas: Users): LiveData<ResponseJSON>
+    suspend fun loginUsers(datas: Users): ResponseJSON
 }

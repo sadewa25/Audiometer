@@ -19,7 +19,7 @@ class RemoteRepository(private val apiService: RetrofitClient) {
         }
     }
 
-    fun loginUsers(datas: Users): LiveData<ResponseJSON> {
+    /*fun loginUsers(datas: Users): LiveData<ResponseJSON> {
         val data = MutableLiveData<ResponseJSON>()
         apiService.response()
             .loginUsers(datas).observeOn(AndroidSchedulers.mainThread())
@@ -28,5 +28,7 @@ class RemoteRepository(private val apiService: RetrofitClient) {
                 data.postValue(it)
             }, {})
         return data
-    }
+    }*/
+
+    suspend fun loginUsers(datas: Users) = apiService.response().loginUsers(datas)
 }

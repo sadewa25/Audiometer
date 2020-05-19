@@ -1,6 +1,5 @@
 package com.codedirect.audiometer.data.source.remote
 
-import hu.akarnokd.rxjava3.retrofit.RxJava3CallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -27,7 +26,7 @@ class RetrofitClient {
         val client = Retrofit.Builder()
             .baseUrl(url)
             .addConverterFactory(GsonConverterFactory.create())
-            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+            //.addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(ok)
             .build()
         return client.create(API::class.java)

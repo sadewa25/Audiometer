@@ -67,6 +67,9 @@ dependencies {
     //lifecycle
     implementation "androidx.lifecycle:lifecycle-extensions:$archLifecycleVersion"
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$archLifecycleVersion"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
     //Loggin
     implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
     //multidex
@@ -83,4 +86,5 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:$koin_version"
     // Koin AndroidX ViewModel features
     implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine"
 }
