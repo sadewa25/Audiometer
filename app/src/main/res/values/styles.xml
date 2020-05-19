@@ -24,6 +24,15 @@
         <item name="boxStrokeColor">@color/text_input_box_stroke</item>
     </style>
 
+    <style name="TextInputLayoutBoxStylePrimary" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="android:layout_marginRight">@dimen/margin_default</item>
+        <item name="android:layout_marginLeft">@dimen/margin_default</item>
+        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:textColorHint">@color/primaryColor</item>
+        <item name="android:textColor">@color/primaryColor</item>
+        <item name="boxStrokeColor">@color/text_input_box_stroke</item>
+    </style>
+
     <style name="LoginTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
         <item name="boxStrokeColor">#fff</item>
         <item name="boxStrokeWidth">2dp</item>

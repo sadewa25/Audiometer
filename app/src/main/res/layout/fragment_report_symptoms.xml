@@ -25,11 +25,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_rounded"
-            app:layout_constraintBottom_toTopOf="@+id/gl_dashboard_report_patient"
+            app:layout_constraintBottom_toTopOf="@+id/gl_report_symptoms"
             app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/gl_dashboard_report_patient"
+            android:id="@+id/gl_report_symptoms"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"

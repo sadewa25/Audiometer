@@ -37,4 +37,6 @@
     <string name="submit">Submit</string>
     <string name="information">Informasi</string>
     <string name="confirm_send">Apakah Data Sudah Benar?</string>
+    <string name="kind_of_need">Jenis Kebutuhan</string>
+    <string name="desc">Deskripsi</string>
 </resources>

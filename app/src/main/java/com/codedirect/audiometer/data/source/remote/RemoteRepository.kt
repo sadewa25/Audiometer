@@ -16,6 +16,10 @@ class RemoteRepository(private val apiService: RetrofitClient) {
     }
 
     suspend fun loginUsers(datas: Users) = apiService.response().loginUsers(datas)
+
     suspend fun createReportSymptoms(datas: DataItems) =
         apiService.response().createReportSymptoms(datas)
+
+    suspend fun createReportNeeded(datas: DataItems) =
+        apiService.response().createReportNeeded(datas)
 }

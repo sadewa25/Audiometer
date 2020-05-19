@@ -19,4 +19,10 @@ interface API {
     suspend fun createReportSymptoms(
         @Body data: DataItems
     ): ResponseJSON
+
+    @Headers("API-Key: \$2a\$10\$0.WlAig6EVWThAKylQ5JEuoTp/QWvGRjiRSfzoxUu8VfkhEpNW2GK")
+    @POST("laporanKebutuhan/api/create")
+    suspend fun createReportNeeded(
+        @Body data: DataItems
+    ): ResponseJSON
 }

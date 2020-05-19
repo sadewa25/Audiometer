@@ -6,6 +6,7 @@ import com.codedirect.audiometer.data.source.remote.RetrofitClient
 import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
+import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
 import com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel
 import org.koin.dsl.module
 
@@ -15,6 +16,7 @@ object AppModule {
         single { DashboardPatientViewModel(get()) }
         single { ReportPatientViewModel(get()) }
         single { ReportSymptomsViewModel(get()) }
+        single { ReportNeededViewModel(get()) }
     }
 
 

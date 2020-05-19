@@ -8,6 +8,7 @@ import com.codedirect.audiometer.di.Injection
 import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
+import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
 import com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel
 
 class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
@@ -41,6 +42,8 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
             return ReportPatientViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(ReportSymptomsViewModel::class.java)) {
             return ReportSymptomsViewModel(appRepository) as T
+        } else if (modelClass.isAssignableFrom(ReportNeededViewModel::class.java)) {
+            return ReportNeededViewModel(appRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

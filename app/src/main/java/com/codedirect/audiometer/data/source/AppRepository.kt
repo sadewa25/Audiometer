@@ -36,4 +36,8 @@ class AppRepository(
         return remoteRepository.createReportSymptoms(datas)
     }
 
+    override suspend fun createReportNeeded(datas: DataItems): ResponseJSON {
+        return remoteRepository.createReportNeeded(datas)
+    }
+
 }

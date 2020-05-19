@@ -8,4 +8,5 @@ import com.codedirect.audiometer.data.source.remote.response.Users
 interface AppDataSource {
     suspend fun loginUsers(datas: Users): ResponseJSON
     suspend fun createReportSymptoms(datas: DataItems): ResponseJSON
+    suspend fun createReportNeeded(datas: DataItems): ResponseJSON
 }

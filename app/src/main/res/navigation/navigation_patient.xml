@@ -18,7 +18,7 @@
         android:id="@+id/reportSymptomsFragment"
         android:name="com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsFragment"
         android:label="ReportSymptomsFragment" />
-    <fragment
+    <dialog
         android:id="@+id/reportNeededFragment"
         android:name="com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededFragment"
         android:label="fragment_report_needed"
