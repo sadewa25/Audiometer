@@ -20,4 +20,10 @@
     <string name="menu_report">Laporan</string>
     <string name="menu_history">Riwayat</string>
     <string name="menu_profile">Profile</string>
+    <string name="condition">Kondisi</string>
+    <string name="title_covid">Covid 19</string>
+    <string name="report_symptoms">Laporkan Gejala</string>
+    <string name="title_status">Status: %1$s </string>
+    <string name="title_skip_drugs" >Skip Obat: %1$s </string>
+    <string name="report_needed">Laporkan Kebutuhan</string>
 </resources>

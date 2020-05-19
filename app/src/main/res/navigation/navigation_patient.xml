@@ -9,5 +9,29 @@
         android:id="@+id/dashboardPatientFragment"
         android:name="com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientFragment"
         android:label="fragment_dashboard_patient"
-        tools:layout="@layout/fragment_dashboard_patient" />
+        tools:layout="@layout/fragment_dashboard_patient" >
+        <action
+            android:id="@+id/action_dashboardPatientFragment_to_reportPatientFragment2"
+            app:destination="@id/reportPatientFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportSymptomsFragment"
+        android:name="com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsFragment"
+        android:label="ReportSymptomsFragment" />
+    <fragment
+        android:id="@+id/reportNeededFragment"
+        android:name="com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededFragment"
+        android:label="fragment_report_needed"
+        tools:layout="@layout/fragment_report_needed" />
+    <fragment
+        android:id="@+id/reportPatientFragment"
+        android:name="com.codedirect.audiometer.ui.report_patient.ReportPatientFragment"
+        android:label="ReportPatientFragment" >
+        <action
+            android:id="@+id/action_reportPatientFragment_to_reportSymptomsFragment"
+            app:destination="@id/reportSymptomsFragment" />
+        <action
+            android:id="@+id/action_reportPatientFragment_to_reportNeededFragment"
+            app:destination="@id/reportNeededFragment" />
+    </fragment>
 </navigation>
