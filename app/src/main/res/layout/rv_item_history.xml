@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="menus"
+            type="com.codedirect.audiometer.utils.models.Menus" />
+        <variable
+            name="model"
+            type="com.codedirect.audiometer.ui.history.HistoryViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_small"
+        android:elevation="@dimen/margin_small"
+        android:onClick="@{() -> model.openHistoryReportPatient(menus)}"
+        app:cardCornerRadius="@dimen/margin_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_small">
+
+            <ImageView
+                android:id="@+id/iv_item_dashboard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/ic_item_dashboard"
+                android:src="@drawable/ic_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_dashboard"
+                style="@style/TextViewGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@{menus.title}"
+                android:textAlignment="center"
+                android:textSize="@dimen/text_default"
+                app:layout_constraintTop_toBottomOf="@+id/iv_item_dashboard"
+                tools:layout_editor_absoluteX="8dp"
+                tools:text="Nama Menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

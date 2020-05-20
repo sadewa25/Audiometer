@@ -9,4 +9,5 @@ interface AppDataSource {
     suspend fun loginUsers(datas: Users): ResponseJSON
     suspend fun createReportSymptoms(datas: DataItems): ResponseJSON
     suspend fun createReportNeeded(datas: DataItems): ResponseJSON
+    suspend fun getReportSymptomsByPatient(datas: DataItems): ResponseJSON
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.codedirect.audiometer.data.source.AppRepository
 import com.codedirect.audiometer.di.Injection
 import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
+import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
 import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
@@ -44,6 +45,8 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
             return ReportSymptomsViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(ReportNeededViewModel::class.java)) {
             return ReportNeededViewModel(appRepository) as T
+        } else if (modelClass.isAssignableFrom(HistoryViewModel::class.java)) {
+            return HistoryViewModel(application, appRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

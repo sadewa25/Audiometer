@@ -4,6 +4,7 @@ import com.codedirect.audiometer.data.source.AppRepository
 import com.codedirect.audiometer.data.source.remote.RemoteRepository
 import com.codedirect.audiometer.data.source.remote.RetrofitClient
 import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
+import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
 import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
@@ -17,6 +18,7 @@ object AppModule {
         single { ReportPatientViewModel(get()) }
         single { ReportSymptomsViewModel(get()) }
         single { ReportNeededViewModel(get()) }
+        single { HistoryViewModel(get(),get()) }
     }
 
 

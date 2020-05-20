@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.codedirect.audiometer.R
 import com.codedirect.audiometer.databinding.FragmentDashboardPatientBinding
 import com.codedirect.audiometer.utils.common.EventObserver
@@ -48,8 +47,15 @@ class DashboardPatientFragment : Fragment() {
         model.openDashboardPatient.observe(viewLifecycleOwner, EventObserver {
             when (it.title) {
                 getString(R.string.menu_report) -> navigateToReportSymptoms()
+                getString(R.string.menu_history) -> navigateToHistory()
             }
         })
+    }
+
+    private fun navigateToHistory() {
+        val actions =
+            DashboardPatientFragmentDirections.actionDashboardPatientFragmentToNavigationHistory()
+        findNavController().navigate(actions)
     }
 
     private fun navigateToReportSymptoms() {

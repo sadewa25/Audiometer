@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dashboardPatientFragment_to_reportPatientFragment2"
             app:destination="@id/reportPatientFragment" />
+        <action
+            android:id="@+id/action_dashboardPatientFragment_to_navigation_history"
+            app:destination="@id/navigation_history" />
     </fragment>
     <fragment
         android:id="@+id/reportSymptomsFragment"
@@ -34,4 +37,5 @@
             android:id="@+id/action_reportPatientFragment_to_reportNeededFragment"
             app:destination="@id/reportNeededFragment" />
     </fragment>
+    <include app:graph="@navigation/navigation_history" />
 </navigation>
