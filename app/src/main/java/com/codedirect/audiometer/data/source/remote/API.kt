@@ -44,4 +44,10 @@ interface API {
     suspend fun getProfile(
         @Body data: DataItems
     ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("user/api/changePassword")
+    suspend fun getChangePassword(
+        @Body data: DataItems
+    ): ResponseJSON
 }

@@ -1,44 +1,44 @@
-package com.codedirect.audiometer.ui.profile
+package com.codedirect.audiometer.ui.profile.change_password
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.codedirect.audiometer.R
 import com.codedirect.audiometer.data.source.remote.response.DataItems
 import com.codedirect.audiometer.data.source.remote.response.ResponseJSON
-import com.codedirect.audiometer.databinding.FragmentProfileBinding
+import com.codedirect.audiometer.databinding.FragmentChangePasswordBinding
+import com.codedirect.audiometer.ui.profile.ProfileViewModel
 import com.codedirect.audiometer.utils.SessionManager
+import com.codedirect.audiometer.utils.Utils
 import com.codedirect.audiometer.utils.common.EventObserver
 import com.codedirect.audiometer.utils.common.Status
 import com.codedirect.audiometer.utils.findNavController
-import kotlinx.android.synthetic.main.fragment_profile.*
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.main.fragment_change_password.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ProfileFragment : Fragment() {
+class ChangePasswordFragment : BottomSheetDialogFragment() {
 
     private val model: ProfileViewModel by viewModel()
     private val sessionManager by lazy {
         SessionManager(requireContext())
     }
-    private var dataMenu: DataItems? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding =
-            DataBindingUtil.inflate<FragmentProfileBinding>(
+            DataBindingUtil.inflate<FragmentChangePasswordBinding>(
                 inflater,
-                R.layout.fragment_profile,
+                R.layout.fragment_change_password,
                 container,
                 false
             )
         binding.lifecycleOwner = this
-        binding.menus = dataMenu
         binding.models = model
         return binding.root
     }
@@ -46,51 +46,49 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        getProfile()
         setupObservers()
     }
 
     private fun setupObservers() {
-        model.openProfile.observe(viewLifecycleOwner, EventObserver {
-            sessionManager.setLogin(false)
-            findNavController().popBackStack(R.id.dashboardPatientFragment, true)
-        })
-        model.openChangePassword.observe(viewLifecycleOwner, EventObserver {
-            navigateToChangePassword()
+        model.openSubmitChangePassword.observe(viewLifecycleOwner, EventObserver {
+            if (ed_change_password_new.text.isNullOrEmpty() || ed_change_password_old.text.isNullOrEmpty())
+                Utils().toast(requireContext(), getString(R.string.there_are_empty_data))
+            else
+                actionSubmitData()
         })
     }
 
-    private fun navigateToChangePassword() {
-        val actions = ProfileFragmentDirections.actionProfileFragmentToChangePasswordFragment()
-        findNavController().navigate(actions)
-    }
-
-    private fun getProfile() {
-        model.getProfile(
+    private fun actionSubmitData() {
+        model.getChangePassword(
             DataItems(
-                authenticatedId = sessionManager.getIDUser().toString()
+                authenticatedId = sessionManager.getIDUser().toString(),
+                old_password = ed_change_password_old.text.toString(),
+                new_password = ed_change_password_new.text.toString()
             )
         ).observe(viewLifecycleOwner, Observer {
             it?.let { resource ->
                 when (resource.status) {
                     Status.SUCCESS -> {
-                        loading_profile.visibility = View.GONE
+                        loading_change_password.visibility = View.GONE
                         resource.data.let { data -> retrieveList(data) }
                     }
                     Status.ERROR -> {
-                        loading_profile.visibility = View.GONE
+                        loading_change_password.visibility = View.GONE
                     }
                     Status.LOADING -> {
-                        loading_profile.visibility = View.VISIBLE
+                        loading_change_password.visibility = View.VISIBLE
                     }
                 }
             }
         })
     }
 
-    private fun retrieveList(items: ResponseJSON?) {
-        model.setDataProfile(items)
+    private fun retrieveList(data: ResponseJSON?) {
+        if (data?.status == getString(R.string.success_).toInt()) {
+            Utils().toast(requireContext(), data.message.toString())
+            findNavController().navigateUp()
+        } else
+            Utils().toast(requireContext(), data?.message.toString())
     }
-
 
 }

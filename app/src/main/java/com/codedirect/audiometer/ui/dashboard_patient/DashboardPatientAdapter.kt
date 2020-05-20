@@ -2,6 +2,8 @@ package com.codedirect.audiometer.ui.dashboard_patient
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.codedirect.audiometer.databinding.RvItemDashboardBinding
 import com.codedirect.audiometer.utils.databinding.AppRecyclerView
@@ -27,7 +29,6 @@ class DashboardPatientAdapter(viewModel: DashboardPatientViewModel) :
         binding.menus = model
         binding.model = viewModel
     }
-
 }
 
 class DiffUtilDrug : DiffUtil.ItemCallback<Menus>() {

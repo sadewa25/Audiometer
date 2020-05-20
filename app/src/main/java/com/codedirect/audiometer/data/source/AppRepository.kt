@@ -52,4 +52,8 @@ class AppRepository(
         return remoteRepository.getProfile(datas)
     }
 
+    override suspend fun getChangePassword(datas: DataItems): ResponseJSON {
+        return remoteRepository.getChangePassword(datas)
+    }
+
 }

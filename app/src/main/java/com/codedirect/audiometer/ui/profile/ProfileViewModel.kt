@@ -21,6 +21,22 @@ class ProfileViewModel(private val repository: AppRepository?) : ViewModel() {
         _openProfile.value = Event(Unit)
     }
 
+    private val _openChangePassword by lazy { MutableLiveData<Event<Unit>>() }
+    val openChangePassword: MutableLiveData<Event<Unit>>
+        get() = _openChangePassword
+
+    fun _openChangePassword() {
+        _openChangePassword.value = Event(Unit)
+    }
+
+    private val _openSubmitChangePassword by lazy { MutableLiveData<Event<Unit>>() }
+    val openSubmitChangePassword: MutableLiveData<Event<Unit>>
+        get() = _openSubmitChangePassword
+
+    fun _openSubmitChangePassword() {
+        _openSubmitChangePassword.value = Event(Unit)
+    }
+
     private val _dataProfile =
         MutableLiveData<List<DataItems>>().apply { value = emptyList() }
     val dataProfile: LiveData<List<DataItems>> = _dataProfile
@@ -35,6 +51,15 @@ class ProfileViewModel(private val repository: AppRepository?) : ViewModel() {
         emit(Resource.loading(data = null))
         try {
             emit(Resource.success(data = repository?.getProfile(datas)))
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
+
+    fun getChangePassword(datas: DataItems) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            emit(Resource.success(data = repository?.getChangePassword(datas)))
         } catch (exception: Exception) {
             emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
         }

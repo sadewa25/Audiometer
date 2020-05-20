@@ -6,5 +6,13 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.codedirect.audiometer.ui.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/changePasswordFragment"
+        android:name="com.codedirect.audiometer.ui.profile.change_password.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
 </navigation>

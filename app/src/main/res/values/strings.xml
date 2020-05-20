@@ -56,4 +56,8 @@
     <string name="steps">Tahap</string>
     <string name="category">Kategori</string>
     <string name="weight_height_format">%skg / %scm</string>
+    <string name="change_password">Ganti Password</string>
+    <string name="old_password">Password Lama</string>
+    <string name="new_password">Password Baru</string>
+    <string name="there_are_empty_data">Terdapat Data Kosong</string>
 </resources>

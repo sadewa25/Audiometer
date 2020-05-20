@@ -197,11 +197,30 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_profile_category_content" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_profile_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:fontFamily="@font/quicksand"
+            android:onClick="@{()->models._openChangePassword()}"
+            android:padding="@dimen/margin_default"
+            android:text="@string/change_password"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primaryLightColor"
+            app:cornerRadius="@dimen/margin_default"
+            app:layout_constraintBottom_toTopOf="@+id/btn_profile_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_profile_logout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_default"
             android:layout_marginBottom="@dimen/margin_medium"
             android:fontFamily="@font/quicksand"

@@ -13,9 +13,9 @@ class DashboardPatientViewModel(private val application: Application?) : ViewMod
     val dataMenu by lazy {
         MutableLiveData<List<Menus>>().apply {
             value = listOf(
-                Menus(R.drawable.ic_home, application?.getString(R.string.menu_report)),
-                Menus(R.drawable.ic_home, application?.getString(R.string.menu_history)),
-                Menus(R.drawable.ic_home, application?.getString(R.string.menu_profile))
+                Menus(R.drawable.ic_report, application?.getString(R.string.menu_report)),
+                Menus(R.drawable.ic_history, application?.getString(R.string.menu_history)),
+                Menus(R.drawable.ic_profile, application?.getString(R.string.menu_profile))
             )
         }
     }
