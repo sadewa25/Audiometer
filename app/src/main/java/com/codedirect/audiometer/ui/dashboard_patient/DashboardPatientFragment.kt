@@ -58,8 +58,15 @@ class DashboardPatientFragment : Fragment() {
             when (it.title) {
                 getString(R.string.menu_report) -> navigateToReportSymptoms()
                 getString(R.string.menu_history) -> navigateToHistory()
+                getString(R.string.menu_profile) -> navigateToProfile()
             }
         })
+    }
+
+    private fun navigateToProfile() {
+        val actions =
+            DashboardPatientFragmentDirections.actionDashboardPatientFragmentToNavigationProfile()
+        findNavController().navigate(actions)
     }
 
     private fun navigateToHistory() {

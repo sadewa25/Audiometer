@@ -48,4 +48,8 @@ class AppRepository(
         return remoteRepository.getReportNeededByPatient(datas)
     }
 
+    override suspend fun getProfile(datas: DataItems): ResponseJSON {
+        return remoteRepository.getProfile(datas)
+    }
+
 }

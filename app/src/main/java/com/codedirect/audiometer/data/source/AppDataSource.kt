@@ -11,4 +11,5 @@ interface AppDataSource {
     suspend fun createReportNeeded(datas: DataItems): ResponseJSON
     suspend fun getReportSymptomsByPatient(datas: DataItems): ResponseJSON
     suspend fun getReportNeededByPatient(datas: DataItems): ResponseJSON
+    suspend fun getProfile(datas: DataItems): ResponseJSON
 }

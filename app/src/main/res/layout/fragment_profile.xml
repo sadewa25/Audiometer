@@ -6,7 +6,11 @@
     <data>
 
         <variable
-            name="model"
+            name="menus"
+            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+
+        <variable
+            name="models"
             type="com.codedirect.audiometer.ui.profile.ProfileViewModel" />
     </data>
 
@@ -30,6 +34,168 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.1" />
 
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_profile_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_profile_name_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/username"
+
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_profile" />
+
+        <TextView
+            android:id="@+id/tv_profile_name_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).nama}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toTopOf="@+id/gl_profile" />
+
+        <TextView
+            android:id="@+id/tv_profile_companion_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/companion"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name_title" />
+
+        <TextView
+            android:id="@+id/tv_profile_companion_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).namaPendamping}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name_content" />
+
+        <TextView
+            android:id="@+id/tv_profile_address_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/address"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_companion_title" />
+
+        <TextView
+            android:id="@+id/tv_profile_address_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).alamat}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_companion_content" />
+
+        <TextView
+            android:id="@+id/tv_profile_weight_height_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/weight_height"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_address_title" />
+
+        <TextView
+            android:id="@+id/tv_profile_weight_height_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{models.dataProfile.empty ? `` : String.format(@string/weight_height_format, models.dataProfile.get(0).beratBadan,models.dataProfile.get(0).tinggiBadan)}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_address_content" />
+
+        <TextView
+            android:id="@+id/tv_profile_category_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/category"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_weight_height_title" />
+
+        <TextView
+            android:id="@+id/tv_profile_category_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).kategori}"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_weight_height_content" />
+
+        <TextView
+            android:id="@+id/tv_profile_steps_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@string/steps"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_category_title" />
+
+        <TextView
+            android:id="@+id/tv_profile_steps_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).tahap}"
+            android:textAlignment="textEnd"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_center"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_category_content" />
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_profile_logout"
             android:layout_width="0dp"
@@ -37,12 +203,28 @@
             android:layout_marginStart="@dimen/margin_default"
             android:layout_marginTop="@dimen/margin_default"
             android:layout_marginEnd="@dimen/margin_default"
-            android:onClick="@{()->model._openProfile}"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:fontFamily="@font/quicksand"
+            android:onClick="@{()->models._openProfile()}"
+            android:padding="@dimen/margin_default"
             android:text="@string/logout"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
             app:backgroundTint="@color/primaryDarkColor"
+            app:cornerRadius="@dimen/margin_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/loading_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toTopOf="@+id/btn_profile_logout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/view" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_steps_content" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

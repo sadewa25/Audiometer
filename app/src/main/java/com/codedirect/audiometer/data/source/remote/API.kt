@@ -38,4 +38,10 @@ interface API {
     suspend fun getReportNeededByPatient(
         @Body data: DataItems
     ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("pasienCovid/api/getProfile")
+    suspend fun getProfile(
+        @Body data: DataItems
+    ): ResponseJSON
 }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SIMAPAN</string>
+    <string name="app_name">Audiometer</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -50,4 +50,10 @@
     <string name="reporting_needed">Laporan Kebutuhan</string>
     <string name="title_hello">Hello, %s</string>
     <string name="logout">Keluar</string>
+    <string name="companion">Pendamping</string>
+    <string name="address">Alamat</string>
+    <string name="weight_height">Berat/ Tinggi Badan</string>
+    <string name="steps">Tahap</string>
+    <string name="category">Kategori</string>
+    <string name="weight_height_format">%skg / %scm</string>
 </resources>
