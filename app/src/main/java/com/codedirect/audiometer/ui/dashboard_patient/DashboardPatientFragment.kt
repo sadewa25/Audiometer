@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.codedirect.audiometer.R
 import com.codedirect.audiometer.databinding.FragmentDashboardPatientBinding
+import com.codedirect.audiometer.utils.SessionManager
 import com.codedirect.audiometer.utils.common.EventObserver
 import com.codedirect.audiometer.utils.findNavController
 import kotlinx.android.synthetic.main.fragment_dashboard_patient.*
@@ -18,6 +19,9 @@ class DashboardPatientFragment : Fragment() {
     private val model: DashboardPatientViewModel by viewModel()
     private val _dashboardPatientAdapter by lazy {
         DashboardPatientAdapter(model)
+    }
+    private val sessionManager by lazy {
+        SessionManager(requireContext())
     }
 
     override fun onCreateView(
@@ -39,8 +43,14 @@ class DashboardPatientFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupTitle()
         setupRvAdapter()
         setupObservers()
+    }
+
+    private fun setupTitle() {
+        tv_dashboard_patient.text =
+            String.format(getString(R.string.title_hello), sessionManager.getUsername().toString())
     }
 
     private fun setupObservers() {

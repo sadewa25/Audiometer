@@ -48,4 +48,6 @@
     <string name="type_needed">Jenis Kebutuhan: %s</string>
     <string name="reporting_symptoms">Laporan Gejala</string>
     <string name="reporting_needed">Laporan Kebutuhan</string>
+    <string name="title_hello">Hello, %s</string>
+    <string name="logout">Keluar</string>
 </resources>

@@ -43,5 +43,14 @@ class SessionManager(private val context: Context?) {
     fun getRoleUser(): String? {
         return pref?.getString(roleUser, ""); }
 
+    private val username = "username"
+    fun setUsername(data: String) {
+        editor?.putString(username, data)
+        editor?.apply()
+    }
+
+    fun getUsername(): String? {
+        return pref?.getString(username, ""); }
+
 
 }

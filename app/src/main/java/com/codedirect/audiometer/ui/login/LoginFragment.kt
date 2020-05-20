@@ -85,6 +85,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 sessionManager.setLogin(true)
                 sessionManager.setIDUser(user?.id.toString())
                 sessionManager.setRoleUser(getString(R.string.id_user_type_patient))
+                sessionManager.setUsername(user?.username.toString())
                 navigateToPatientDashboard()
             } else
                 navigateToCompanionDashboard()
