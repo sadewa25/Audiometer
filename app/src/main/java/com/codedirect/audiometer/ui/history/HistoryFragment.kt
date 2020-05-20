@@ -45,8 +45,8 @@ class HistoryFragment : Fragment() {
     private fun setupObservers() {
         model.openHistoryReportPatient.observe(viewLifecycleOwner, EventObserver {
             when (it.title) {
-                getString(R.string.report_symptoms) -> navigateToHistoryReportSymptoms()
-                getString(R.string.report_needed) -> navigateToHistoryReportNeeded()
+                getString(R.string.reporting_symptoms) -> navigateToHistoryReportSymptoms()
+                getString(R.string.reporting_needed) -> navigateToHistoryReportNeeded()
             }
         })
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="menus"
             type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
@@ -30,12 +31,13 @@
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@{String.format(@string/cough_format, menus.batuk)}"
                 android:textColor="@{menus.batuk.equals(`ya`) ? @color/greenColor : @color/redColor}"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/gl_item_history_report"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_times"
                 tools:text="Batuk" />
 
             <TextView
@@ -71,12 +73,13 @@
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
                 android:text="@{String.format(@string/nausea_format, menus.mual)}"
                 android:textColor="@{menus.mual.equals(`ya`) ? @color/greenColor : @color/redColor}"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_times"
                 tools:text="Mual" />
 
             <TextView
@@ -106,6 +109,21 @@
                 app:layout_constraintStart_toStartOf="@+id/gl_item_history_report"
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_nausea"
                 tools:text="Sesak Nafas" />
+
+            <TextView
+                android:id="@+id/tv_item_history_report_times"
+                style="@style/TextViewGeneral"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{menus.time}"
+                android:textAlignment="center"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Times" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/gl_item_history_report"

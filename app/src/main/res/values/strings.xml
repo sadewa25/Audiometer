@@ -45,4 +45,7 @@
     <string name="confirm_send">Apakah Data Sudah Benar?</string>
     <string name="kind_of_need">Jenis Kebutuhan</string>
     <string name="desc">Deskripsi</string>
+    <string name="type_needed">Jenis Kebutuhan: %s</string>
+    <string name="reporting_symptoms">Laporan Gejala</string>
+    <string name="reporting_needed">Laporan Kebutuhan</string>
 </resources>

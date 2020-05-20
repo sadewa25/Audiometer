@@ -44,4 +44,8 @@ class AppRepository(
         return remoteRepository.getReportSymptomsByPatient(datas)
     }
 
+    override suspend fun getReportNeededByPatient(datas: DataItems): ResponseJSON {
+        return remoteRepository.getReportNeededByPatient(datas)
+    }
+
 }

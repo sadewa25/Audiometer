@@ -25,4 +25,7 @@ class RemoteRepository(private val apiService: RetrofitClient) {
 
     suspend fun getReportSymptomsByPatient(datas: DataItems) =
         apiService.response().getReportSymptomsByPatient(datas)
+
+    suspend fun getReportNeededByPatient(datas: DataItems) =
+        apiService.response().getReportNeededByPatient(datas)
 }

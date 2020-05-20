@@ -32,4 +32,10 @@ interface API {
     suspend fun getReportSymptomsByPatient(
         @Body data: DataItems
     ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("laporanKebutuhan/api/findByIdPasien")
+    suspend fun getReportNeededByPatient(
+        @Body data: DataItems
+    ): ResponseJSON
 }

@@ -23,30 +23,30 @@ class HistoryViewModel(
     val dataMenu by lazy {
         MutableLiveData<List<Menus>>().apply {
             value = listOf(
-                Menus(R.drawable.ic_home, application?.getString(R.string.report_symptoms)),
-                Menus(R.drawable.ic_home, application?.getString(R.string.report_needed))
+                Menus(R.drawable.ic_home, application?.getString(R.string.reporting_symptoms)),
+                Menus(R.drawable.ic_home, application?.getString(R.string.reporting_needed))
             )
         }
     }
 
-    private val sessionManager by lazy {
-        SessionManager(application?.applicationContext)
-    }
     private val _dataReportSymptoms =
         MutableLiveData<List<DataItems>>().apply { value = emptyList() }
     val dataReportSymptoms: LiveData<List<DataItems>> = _dataReportSymptoms
-//    val dataReportSymptoms by lazy {
-//        MutableLiveData<List<DataItems>>().apply {
-//            value = listOf(
-//                DataItems(batuk = "ya",mual = "ya",pusing = "ya",id = "00",demam = "ya",lemas = "tidak",sesak = "tidak"),
-//                DataItems(batuk = "ya",mual = "ya",pusing = "ya",id = "10",demam = "ya",lemas = "tidak",sesak = "tidak"),
-//                DataItems(batuk = "ya",mual = "ya",pusing = "ya",id = "20",demam = "ya",lemas = "tidak",sesak = "tidak")
-//            )
-//        }
-//    }
 
     fun setDataReportSymptoms(data: ResponseJSON?) {
-        this._dataReportSymptoms.value = data?.data as List<DataItems>?
+        _dataReportSymptoms.apply {
+            value = data?.data as List<DataItems>?
+        }
+    }
+
+    private val _dataReportNeeded =
+        MutableLiveData<List<DataItems>>().apply { value = emptyList() }
+    val dataReportNeeded: LiveData<List<DataItems>> = _dataReportNeeded
+
+    fun setDataReportNeeded(data: ResponseJSON?) {
+        _dataReportNeeded.apply {
+            value = data?.data as List<DataItems>?
+        }
     }
 
     private val _openHistoryReportPatient = MutableLiveData<Event<Menus>>()
@@ -60,6 +60,22 @@ class HistoryViewModel(
         emit(Resource.loading(data = null))
         try {
             val temp = repository?.getReportSymptomsByPatient(
+                dataItems
+            )
+            emit(
+                Resource.success(
+                    data = temp
+                )
+            )
+        } catch (exception: Exception) {
+            emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
+        }
+    }
+
+    fun getReportNeededByPatient(dataItems: DataItems) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(data = null))
+        try {
+            val temp = repository?.getReportNeededByPatient(
                 dataItems
             )
             emit(
