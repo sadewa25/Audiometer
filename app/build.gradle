@@ -19,7 +19,7 @@ android {
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String" , "API_KEY" , '"$2a$10$0.WlAig6EVWThAKylQ5JEuoTp/QWvGRjiRSfzoxUu8VfkhEpNW2GK"')
+        buildConfigField("String", "API_KEY", '"$2a$10$0.WlAig6EVWThAKylQ5JEuoTp/QWvGRjiRSfzoxUu8VfkhEpNW2GK"')
     }
     buildTypes {
         release {
