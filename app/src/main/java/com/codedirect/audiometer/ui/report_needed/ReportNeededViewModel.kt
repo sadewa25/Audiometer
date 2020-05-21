@@ -1,4 +1,4 @@
-package com.codedirect.audiometer.ui.report_patient.report_needed
+package com.codedirect.audiometer.ui.report_needed
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

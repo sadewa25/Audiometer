@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel" />
+            type="com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel" />
 
         <variable
             name="data"
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/margin_default"
-        tools:context=".ui.report_patient.report_needed.ReportNeededFragment">
+        tools:context=".ui.report_needed.ReportNeededFragment">
 
         <View
             android:id="@+id/view"

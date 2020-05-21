@@ -7,39 +7,20 @@
 
     <fragment
         android:id="@+id/dashboardPatientFragment"
-        android:name="com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientFragment"
+        android:name="com.codedirect.audiometer.ui.dashboard.patient.DashboardPatientFragment"
         android:label="fragment_dashboard_patient"
         tools:layout="@layout/fragment_dashboard_patient" >
-        <action
-            android:id="@+id/action_dashboardPatientFragment_to_reportPatientFragment2"
-            app:destination="@id/reportPatientFragment" />
         <action
             android:id="@+id/action_dashboardPatientFragment_to_navigation_history"
             app:destination="@id/navigation_history" />
         <action
             android:id="@+id/action_dashboardPatientFragment_to_navigation_profile"
             app:destination="@id/navigation_profile" />
-    </fragment>
-    <fragment
-        android:id="@+id/reportSymptomsFragment"
-        android:name="com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsFragment"
-        android:label="ReportSymptomsFragment" />
-    <dialog
-        android:id="@+id/reportNeededFragment"
-        android:name="com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededFragment"
-        android:label="fragment_report_needed"
-        tools:layout="@layout/fragment_report_needed" />
-    <fragment
-        android:id="@+id/reportPatientFragment"
-        android:name="com.codedirect.audiometer.ui.report_patient.ReportPatientFragment"
-        android:label="ReportPatientFragment" >
         <action
-            android:id="@+id/action_reportPatientFragment_to_reportSymptomsFragment"
-            app:destination="@id/reportSymptomsFragment" />
-        <action
-            android:id="@+id/action_reportPatientFragment_to_reportNeededFragment"
-            app:destination="@id/reportNeededFragment" />
+            android:id="@+id/action_dashboardPatientFragment_to_navigation_report"
+            app:destination="@id/navigation_report" />
     </fragment>
     <include app:graph="@navigation/navigation_history" />
     <include app:graph="@navigation/navigation_profile" />
+    <include app:graph="@navigation/navigation_report" />
 </navigation>

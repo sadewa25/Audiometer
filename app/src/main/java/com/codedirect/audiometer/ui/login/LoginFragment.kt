@@ -38,8 +38,12 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     private fun checkLogin() {
-        if (sessionManager.getLogin() == true)
-            navigateToPatientDashboard()
+        if (sessionManager.getLogin() == true) {
+            if (sessionManager.getRoleUser().equals(getString(R.string.id_user_type_patient)))
+                navigateToDashboardPatient()
+            else
+                navigateToDashboardCompanion()
+        }
     }
 
     private fun setupClickListener() {
@@ -79,23 +83,38 @@ class LoginFragment : Fragment(), View.OnClickListener {
     private fun retrieveList(
         it: ResponseJSON?
     ) {
-        if (it?.status == getString(R.string.success_).toInt())
-            if (it.user?.role.equals(getString(R.string.id_user_type_patient))) {
-                val user = it.user
-                sessionManager.setLogin(true)
-                sessionManager.setIDUser(user?.id.toString())
-                sessionManager.setRoleUser(getString(R.string.id_user_type_patient))
-                sessionManager.setUsername(user?.username.toString())
-                navigateToPatientDashboard()
-            } else
-                navigateToCompanionDashboard()
-        else
+        if (it?.status == getString(R.string.success_).toInt()) {
+            val user = it.user
+            if (user?.role.equals(getString(R.string.id_user_type_patient)))
+                setupPatient(user)
+            else
+                setupCompanion(user)
+        } else
             Utils().toast(requireContext(), it?.message.toString())
     }
 
-    private fun navigateToCompanionDashboard() {}
+    private fun setupCompanion(user: Users?) {
+        sessionManager.setLogin(true)
+        sessionManager.setIDUser(user?.id.toString())
+        sessionManager.setRoleUser(getString(R.string.id_user_type_companion))
+        sessionManager.setUsername(user?.username.toString())
+        navigateToDashboardCompanion()
+    }
 
-    private fun navigateToPatientDashboard() {
+    private fun navigateToDashboardCompanion() {
+        val actions = LoginFragmentDirections.actionLoginFragmentToNavigationCompanion()
+        findNavController().navigate(actions)
+    }
+
+    private fun setupPatient(user: Users?) {
+        sessionManager.setLogin(true)
+        sessionManager.setIDUser(user?.id.toString())
+        sessionManager.setRoleUser(getString(R.string.id_user_type_patient))
+        sessionManager.setUsername(user?.username.toString())
+        navigateToDashboardPatient()
+    }
+
+    private fun navigateToDashboardPatient() {
         val actions = LoginFragmentDirections.actionLoginFragmentToNavigationPatient()
         findNavController().navigate(actions)
     }

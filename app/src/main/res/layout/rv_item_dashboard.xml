@@ -11,7 +11,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel" />
+            type="com.codedirect.audiometer.ui.dashboard.DashboardViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView

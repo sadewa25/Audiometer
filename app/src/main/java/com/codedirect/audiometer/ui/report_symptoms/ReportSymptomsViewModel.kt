@@ -1,6 +1,5 @@
-package com.codedirect.audiometer.ui.report_patient.report_symptoms
+package com.codedirect.audiometer.ui.report_symptoms
 
-import android.app.Application
 import androidx.databinding.ObservableInt
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

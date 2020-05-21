@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation_companion"
+    app:startDestination="@id/dashboardCompanionFragment">
+
+    <fragment
+        android:id="@+id/dashboardCompanionFragment"
+        android:name="com.codedirect.audiometer.ui.dashboard.companion.DashboardCompanionFragment"
+        android:label="DashboardCompanionFragment" >
+        <action
+            android:id="@+id/action_dashboardCompanionFragment_to_reportNeededFragment2"
+            app:destination="@id/reportNeededFragment2" />
+        <action
+            android:id="@+id/action_dashboardCompanionFragment_to_reportSymptomsFragment2"
+            app:destination="@id/reportSymptomsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/reportNeededFragment2"
+        android:name="com.codedirect.audiometer.ui.report_needed.ReportNeededFragment"
+        android:label="ReportNeededFragment" />
+    <fragment
+        android:id="@+id/reportSymptomsFragment2"
+        android:name="com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsFragment"
+        android:label="ReportSymptomsFragment" />
+</navigation>

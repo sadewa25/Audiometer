@@ -1,4 +1,4 @@
-package com.codedirect.audiometer.ui.dashboard_patient
+package com.codedirect.audiometer.ui.dashboard.patient
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.codedirect.audiometer.R
 import com.codedirect.audiometer.databinding.FragmentDashboardPatientBinding
+import com.codedirect.audiometer.ui.dashboard.DashboardPatientAdapter
+import com.codedirect.audiometer.ui.dashboard.DashboardViewModel
 import com.codedirect.audiometer.utils.SessionManager
 import com.codedirect.audiometer.utils.common.EventObserver
 import com.codedirect.audiometer.utils.findNavController
@@ -16,7 +18,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class DashboardPatientFragment : Fragment() {
 
-    private val model: DashboardPatientViewModel by viewModel()
+    private val model: DashboardViewModel by viewModel()
     private val _dashboardPatientAdapter by lazy {
         DashboardPatientAdapter(model)
     }
@@ -77,7 +79,7 @@ class DashboardPatientFragment : Fragment() {
 
     private fun navigateToReportSymptoms() {
         val actions =
-            DashboardPatientFragmentDirections.actionDashboardPatientFragmentToReportPatientFragment2()
+            DashboardPatientFragmentDirections.actionDashboardPatientFragmentToNavigationReport()
         findNavController().navigate(actions)
     }
 

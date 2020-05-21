@@ -5,13 +5,13 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.codedirect.audiometer.data.source.AppRepository
 import com.codedirect.audiometer.di.Injection
-import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
+import com.codedirect.audiometer.ui.dashboard.DashboardViewModel
 import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.profile.ProfileViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
-import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
-import com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel
+import com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel
+import com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel
 
 class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
 
@@ -38,8 +38,10 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             return LoginViewModel(appRepository) as T
-        } else if (modelClass.isAssignableFrom(DashboardPatientViewModel::class.java)) {
-            return DashboardPatientViewModel(application) as T
+        } else if (modelClass.isAssignableFrom(DashboardViewModel::class.java)) {
+            return DashboardViewModel(
+                application
+            ) as T
         } else if (modelClass.isAssignableFrom(ReportPatientViewModel::class.java)) {
             return ReportPatientViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(ReportSymptomsViewModel::class.java)) {

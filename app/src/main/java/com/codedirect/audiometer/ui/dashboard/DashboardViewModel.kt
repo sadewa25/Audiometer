@@ -1,4 +1,4 @@
-package com.codedirect.audiometer.ui.dashboard_patient
+package com.codedirect.audiometer.ui.dashboard
 
 import android.app.Application
 import androidx.lifecycle.LiveData
@@ -8,13 +8,23 @@ import com.codedirect.audiometer.R
 import com.codedirect.audiometer.utils.common.Event
 import com.codedirect.audiometer.utils.models.Menus
 
-class DashboardPatientViewModel(private val application: Application?) : ViewModel() {
+class DashboardViewModel(private val application: Application?) : ViewModel() {
 
     val dataMenu by lazy {
         MutableLiveData<List<Menus>>().apply {
             value = listOf(
                 Menus(R.drawable.ic_report, application?.getString(R.string.menu_report)),
                 Menus(R.drawable.ic_history, application?.getString(R.string.menu_history)),
+                Menus(R.drawable.ic_profile, application?.getString(R.string.menu_profile))
+            )
+        }
+    }
+
+    val dataMenuCompanion by lazy {
+        MutableLiveData<List<Menus>>().apply {
+            value = listOf(
+                Menus(R.drawable.ic_report, application?.getString(R.string.menu_report)),
+                Menus(R.drawable.ic_history, application?.getString(R.string.menu_patient)),
                 Menus(R.drawable.ic_profile, application?.getString(R.string.menu_profile))
             )
         }

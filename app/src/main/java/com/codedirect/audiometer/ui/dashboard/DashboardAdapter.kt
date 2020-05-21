@@ -1,16 +1,14 @@
-package com.codedirect.audiometer.ui.dashboard_patient
+package com.codedirect.audiometer.ui.dashboard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.DiffUtil
 import com.codedirect.audiometer.databinding.RvItemDashboardBinding
 import com.codedirect.audiometer.utils.databinding.AppRecyclerView
 import com.codedirect.audiometer.utils.models.Menus
 
-class DashboardPatientAdapter(viewModel: DashboardPatientViewModel) :
-    AppRecyclerView<DashboardPatientViewModel, RvItemDashboardBinding, Menus>(
+class DashboardPatientAdapter(viewModel: DashboardViewModel) :
+    AppRecyclerView<DashboardViewModel, RvItemDashboardBinding, Menus>(
         viewModel,
         DiffUtilDrug()
     ) {
@@ -23,7 +21,7 @@ class DashboardPatientAdapter(viewModel: DashboardPatientViewModel) :
 
     override fun onPrepareBindViewHolder(
         binding: RvItemDashboardBinding,
-        viewModel: DashboardPatientViewModel,
+        viewModel: DashboardViewModel,
         model: Menus
     ) {
         binding.menus = model

@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel" />
+            type="com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel" />
 
         <variable
             name="data"
@@ -18,7 +18,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.report_patient.report_symptoms.ReportSymptomsFragment">
+        tools:context=".ui.report_symptoms.ReportSymptomsFragment">
 
         <View
             android:id="@+id/view"

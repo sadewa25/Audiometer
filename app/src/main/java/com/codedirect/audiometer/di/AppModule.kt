@@ -3,19 +3,23 @@ package com.codedirect.audiometer.di
 import com.codedirect.audiometer.data.source.AppRepository
 import com.codedirect.audiometer.data.source.remote.RemoteRepository
 import com.codedirect.audiometer.data.source.remote.RetrofitClient
-import com.codedirect.audiometer.ui.dashboard_patient.DashboardPatientViewModel
+import com.codedirect.audiometer.ui.dashboard.DashboardViewModel
 import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.profile.ProfileViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
-import com.codedirect.audiometer.ui.report_patient.report_needed.ReportNeededViewModel
-import com.codedirect.audiometer.ui.report_patient.report_symptoms.ReportSymptomsViewModel
+import com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel
+import com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel
 import org.koin.dsl.module
 
 object AppModule {
     val view_models = module {
         single { LoginViewModel(get()) }
-        single { DashboardPatientViewModel(get()) }
+        single {
+            DashboardViewModel(
+                get()
+            )
+        }
         single { ReportPatientViewModel(get()) }
         single { ReportSymptomsViewModel(get()) }
         single { ReportNeededViewModel(get()) }

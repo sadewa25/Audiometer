@@ -21,6 +21,10 @@
         <action
             android:id="@+id/action_loginFragment_to_navigation_patient"
             app:destination="@id/navigation_patient" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_companion"
+            app:destination="@id/navigation_companion" />
     </fragment>
     <include app:graph="@navigation/navigation_patient" />
+    <include app:graph="@navigation/navigation_companion" />
 </navigation>
