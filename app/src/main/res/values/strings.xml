@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Audiometer</string>
+    <string name="app_name">Aplikasi Informasi Status Pasien Covid 19</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -10,8 +10,8 @@
     <string name="network_unavailable">Tidak Ada Koneksi Internet</string>
     <string name="login_page">Login Page</string>
     <string name="ic_login">Ikon Login</string>
-    <string name="title_hospital">Rumah Sakit Dr. Soetomo</string>
-    <string name="title_hospital_desc"><![CDATA[Sistem Informasi Kondisi Pasien MDR-TB & COVID-19]]></string>
+    <string name="title_hospital">Aplikasi Pelaporan Kondisi Pasien Covid</string>
+    <string name="title_hospital_desc">Poli Paru Dr.Soetomo</string>
     <string name="username">Username</string>
     <string name="id_user_type_patient">0</string>
     <string name="id_user_type_companion">1</string>

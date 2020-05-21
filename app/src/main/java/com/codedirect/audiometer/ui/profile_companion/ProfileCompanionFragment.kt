@@ -14,9 +14,6 @@ import com.codedirect.audiometer.utils.findNavController
 import kotlinx.android.synthetic.main.fragment_profile_companion.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-/**
- * A simple [Fragment] subclass.
- */
 class ProfileCompanionFragment : Fragment() {
 
     private val model: ProfileCompanionViewModel by viewModel()
@@ -54,7 +51,7 @@ class ProfileCompanionFragment : Fragment() {
     private fun setupObservers() {
         model.openProfile.observe(viewLifecycleOwner, EventObserver {
             sessionManager.setLogin(false)
-            findNavController().popBackStack(R.id.dashboardPatientFragment, true)
+            findNavController().popBackStack(R.id.dashboardCompanionFragment, true)
         })
         model.openChangePassword.observe(viewLifecycleOwner, EventObserver {
             navigateToChangePassword()

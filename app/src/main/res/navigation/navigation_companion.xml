@@ -40,7 +40,7 @@
             android:id="@+id/action_profileCompanionFragment_to_changePasswordFragment2"
             app:destination="@id/changePasswordFragment2" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/changePasswordFragment2"
         android:name="com.codedirect.audiometer.ui.change_password.ChangePasswordFragment"
         android:label="ChangePasswordFragment" />
