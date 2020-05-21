@@ -1,5 +1,8 @@
 package com.codedirect.audiometer.ui.login
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -48,11 +51,26 @@ class LoginFragment : Fragment(), View.OnClickListener {
 
     private fun setupClickListener() {
         btn_login.setOnClickListener(this)
+        tv_login_privacy_policy.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.btn_login -> login()
+            R.id.tv_login_privacy_policy -> privacyPolicy()
+        }
+    }
+
+    private fun privacyPolicy() {
+        val urlString = "http://codedirect.id/privacy_policy_covid.html"
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(urlString))
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        intent.setData(Uri.parse(urlString))
+        try {
+            startActivity(intent)
+        } catch (ex: ActivityNotFoundException) {
+            // Chrome browser presumably not installed so allow user to choose instead
+            startActivity(intent)
         }
     }
 
@@ -124,3 +142,4 @@ class LoginFragment : Fragment(), View.OnClickListener {
         findNavController().navigate(actions)
     }
 }
+

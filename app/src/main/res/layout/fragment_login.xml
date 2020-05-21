@@ -112,6 +112,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ti_login_password" />
 
+    <TextView
+        android:id="@+id/tv_login_privacy_policy"
+        style="@style/TextViewGeneral"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_default"
+        android:text="@string/privacy_policy"
+        android:textAlignment="center"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="@dimen/text_default"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
     <ProgressBar
         android:id="@+id/login_loading"
         android:layout_width="wrap_content"
