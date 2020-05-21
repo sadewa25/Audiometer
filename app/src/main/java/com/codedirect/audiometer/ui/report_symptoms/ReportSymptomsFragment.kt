@@ -56,20 +56,62 @@ class ReportSymptomsFragment : Fragment() {
                 getString(R.string.information),
                 getString(R.string.confirm_send)
             ) {
-                createSymptoms(
-                    DataItems(
-                        authenticatedId = sessionManager.getIDUser().toString(),
-                        batuk = requireActivity().findViewById<RadioButton>(model.getCoughOptionsSelected()).text.toString(),
-                        demam = requireActivity().findViewById<RadioButton>(model.getfeverOptionsSelected()).text.toString(),
-                        lemas = requireActivity().findViewById<RadioButton>(model.getlimpOptionsSelected()).text.toString(),
-                        mual = requireActivity().findViewById<RadioButton>(model.getnauseaOptionsSelected()).text.toString(),
-                        pusing = requireActivity().findViewById<RadioButton>(model.getheadacheOptionsSelected()).text.toString(),
-                        sesak = requireActivity().findViewById<RadioButton>(model.getbreathlessOptionsSelected()).text.toString()
-                    )
-                )
+                if (sessionManager.getRoleUser().equals(getString(R.string.id_user_type_patient)))
+                    postSymptomsPatient()
+                else
+                    postSymptomsCompanion()
             }
 
         })
+    }
+
+    private fun postSymptomsCompanion() {
+        createCompanionReportSymptoms(
+            DataItems(
+                authenticatedId = sessionManager.getIDUser().toString(),
+                batuk = requireActivity().findViewById<RadioButton>(model.getCoughOptionsSelected()).text.toString(),
+                demam = requireActivity().findViewById<RadioButton>(model.getfeverOptionsSelected()).text.toString(),
+                lemas = requireActivity().findViewById<RadioButton>(model.getlimpOptionsSelected()).text.toString(),
+                mual = requireActivity().findViewById<RadioButton>(model.getnauseaOptionsSelected()).text.toString(),
+                pusing = requireActivity().findViewById<RadioButton>(model.getheadacheOptionsSelected()).text.toString(),
+                sesak = requireActivity().findViewById<RadioButton>(model.getbreathlessOptionsSelected()).text.toString()
+            )
+        )
+    }
+
+    private fun createCompanionReportSymptoms(dataItems: DataItems) {
+        model.createCompanionReportSymptoms(
+            dataItems
+        ).observe(viewLifecycleOwner, Observer {
+            it?.let { resource ->
+                when (resource.status) {
+                    Status.SUCCESS -> {
+                        loading_report_symptoms.visibility = View.GONE
+                        resource.data.let { data -> retrieveReturn(data) }
+                    }
+                    Status.ERROR -> {
+                        loading_report_symptoms.visibility = View.GONE
+                    }
+                    Status.LOADING -> {
+                        loading_report_symptoms.visibility = View.VISIBLE
+                    }
+                }
+            }
+        })
+    }
+
+    private fun postSymptomsPatient() {
+        createSymptoms(
+            DataItems(
+                authenticatedId = sessionManager.getIDUser().toString(),
+                batuk = requireActivity().findViewById<RadioButton>(model.getCoughOptionsSelected()).text.toString(),
+                demam = requireActivity().findViewById<RadioButton>(model.getfeverOptionsSelected()).text.toString(),
+                lemas = requireActivity().findViewById<RadioButton>(model.getlimpOptionsSelected()).text.toString(),
+                mual = requireActivity().findViewById<RadioButton>(model.getnauseaOptionsSelected()).text.toString(),
+                pusing = requireActivity().findViewById<RadioButton>(model.getheadacheOptionsSelected()).text.toString(),
+                sesak = requireActivity().findViewById<RadioButton>(model.getbreathlessOptionsSelected()).text.toString()
+            )
+        )
     }
 
     private fun createSymptoms(data: DataItems) {
@@ -95,8 +137,13 @@ class ReportSymptomsFragment : Fragment() {
 
     private fun retrieveReturn(data: ResponseJSON?) {
         Utils().toast(requireContext(), data?.message.toString())
-        if (data?.status == getString(R.string.success_).toInt())
-            findNavController().popBackStack(R.id.reportPatientFragment, true)
+        if (data?.status == getString(R.string.success_).toInt()) {
+            if (sessionManager.getRoleUser().equals(getString(R.string.id_user_type_patient)))
+                findNavController().popBackStack(R.id.reportPatientFragment, true)
+            else
+                findNavController().navigateUp()
+        }
+
     }
 
 

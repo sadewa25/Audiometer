@@ -61,4 +61,8 @@
     <string name="new_password">Password Baru</string>
     <string name="there_are_empty_data">Terdapat Data Kosong</string>
     <string name="menu_patient">Pasien</string>
+    <string name="name_patient">Nama Pasien: %s</string>
+    <string name="category_patient">Kategori: %s</string>
+    <string name="address_patient">Alamat: %s</string>
+    <string name="steps_patient">Tahapan: %s</string>
 </resources>

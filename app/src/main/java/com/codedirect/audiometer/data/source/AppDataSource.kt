@@ -13,4 +13,7 @@ interface AppDataSource {
     suspend fun getReportNeededByPatient(datas: DataItems): ResponseJSON
     suspend fun getProfile(datas: DataItems): ResponseJSON
     suspend fun getChangePassword(datas: DataItems): ResponseJSON
+    suspend fun companionCreateSymptoms(datas: DataItems): ResponseJSON
+    suspend fun companionCreateNeeded(datas: DataItems): ResponseJSON
+    suspend fun findPasienByCompanion(datas: DataItems): ResponseJSON
 }

@@ -56,4 +56,16 @@ class AppRepository(
         return remoteRepository.getChangePassword(datas)
     }
 
+    override suspend fun companionCreateSymptoms(datas: DataItems): ResponseJSON {
+        return remoteRepository.companionCreateSymptoms(datas)
+    }
+
+    override suspend fun companionCreateNeeded(datas: DataItems): ResponseJSON {
+        return remoteRepository.companionCreateNeeded(datas)
+    }
+
+    override suspend fun findPasienByCompanion(datas: DataItems): ResponseJSON {
+        return remoteRepository.findPasienByCompanion(datas)
+    }
+
 }

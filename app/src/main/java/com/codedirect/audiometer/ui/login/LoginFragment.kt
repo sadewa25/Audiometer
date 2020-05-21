@@ -57,27 +57,30 @@ class LoginFragment : Fragment(), View.OnClickListener {
     }
 
     private fun login() {
-        model.getUsers(
-            Users(
-                username = ed_login_username.text.toString(),
-                password = ed_login_password.text.toString()
-            )
-        ).observe(this, Observer {
-            it?.let { resource ->
-                when (resource.status) {
-                    Status.SUCCESS -> {
-                        login_loading.visibility = View.GONE
-                        resource.data.let { users -> retrieveList(users) }
-                    }
-                    Status.ERROR -> {
-                        login_loading.visibility = View.GONE
-                    }
-                    Status.LOADING -> {
-                        login_loading.visibility = View.VISIBLE
+        if (ed_login_password.text.isNullOrEmpty() || ed_login_username.text.isNullOrEmpty())
+            Utils().toast(requireContext(), getString(R.string.there_are_empty_data))
+        else
+            model.getUsers(
+                Users(
+                    username = ed_login_username.text.toString(),
+                    password = ed_login_password.text.toString()
+                )
+            ).observe(this, Observer {
+                it?.let { resource ->
+                    when (resource.status) {
+                        Status.SUCCESS -> {
+                            login_loading.visibility = View.GONE
+                            resource.data.let { users -> retrieveList(users) }
+                        }
+                        Status.ERROR -> {
+                            login_loading.visibility = View.GONE
+                        }
+                        Status.LOADING -> {
+                            login_loading.visibility = View.VISIBLE
+                        }
                     }
                 }
-            }
-        })
+            })
     }
 
     private fun retrieveList(
@@ -89,6 +92,8 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 setupPatient(user)
             else
                 setupCompanion(user)
+            ed_login_password.setText("")
+            ed_login_username.setText("")
         } else
             Utils().toast(requireContext(), it?.message.toString())
     }

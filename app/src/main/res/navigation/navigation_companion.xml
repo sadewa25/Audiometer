@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_dashboardCompanionFragment_to_reportSymptomsFragment2"
             app:destination="@id/reportSymptomsFragment2" />
+        <action
+            android:id="@+id/action_dashboardCompanionFragment_to_patientCompanionFragment"
+            app:destination="@id/patientCompanionFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportNeededFragment2"
@@ -22,4 +25,8 @@
         android:id="@+id/reportSymptomsFragment2"
         android:name="com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsFragment"
         android:label="ReportSymptomsFragment" />
+    <fragment
+        android:id="@+id/patientCompanionFragment"
+        android:name="com.codedirect.audiometer.ui.patient_companion.PatientCompanionFragment"
+        android:label="PatientCompanionFragment" />
 </navigation>

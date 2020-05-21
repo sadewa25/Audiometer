@@ -50,4 +50,22 @@ interface API {
     suspend fun getChangePassword(
         @Body data: DataItems
     ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("laporanGejala/api/pendampingCreate")
+    suspend fun companionCreateSymptoms(
+        @Body data: DataItems
+    ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("laporanKebutuhan/api/pendampingCreate")
+    suspend fun companionCreateNeeded(
+        @Body data: DataItems
+    ): ResponseJSON
+
+    @Headers("API-Key: ${BuildConfig.API_KEY}")
+    @POST("pasienCovid/api/findPasienByPendamping")
+    suspend fun findPasienByCompanion(
+        @Body data: DataItems
+    ): ResponseJSON
 }

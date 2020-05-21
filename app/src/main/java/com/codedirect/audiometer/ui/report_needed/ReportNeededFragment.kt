@@ -54,13 +54,43 @@ class ReportNeededFragment : BottomSheetDialogFragment() {
                 getString(R.string.information),
                 getString(R.string.confirm_send)
             ) {
-                createNeeded(
-                    DataItems(
-                        authenticatedId = sessionManager.getIDUser().toString(),
-                        jenisKebutuhan = ed_report_needed_kind.text.toString(),
-                        keterangan = ed_report_needed_desc.text.toString()
+                if (sessionManager.getRoleUser().equals(getString(R.string.id_user_type_patient)))
+                    createNeeded(
+                        DataItems(
+                            authenticatedId = sessionManager.getIDUser().toString(),
+                            jenisKebutuhan = ed_report_needed_kind.text.toString(),
+                            keterangan = ed_report_needed_desc.text.toString()
+                        )
                     )
-                )
+                else
+                    createCompanionNeeded(
+                        DataItems(
+                            authenticatedId = sessionManager.getIDUser().toString(),
+                            jenisKebutuhan = ed_report_needed_kind.text.toString(),
+                            keterangan = ed_report_needed_desc.text.toString()
+                        )
+                    )
+            }
+        })
+    }
+
+    private fun createCompanionNeeded(dataItems: DataItems) {
+        model.createCompanionReportNeeded(
+            dataItems
+        ).observe(viewLifecycleOwner, Observer {
+            it?.let { resource ->
+                when (resource.status) {
+                    Status.SUCCESS -> {
+                        loading_report_needed.visibility = View.GONE
+                        resource.data.let { data -> retrieveReturn(data) }
+                    }
+                    Status.ERROR -> {
+                        loading_report_needed.visibility = View.GONE
+                    }
+                    Status.LOADING -> {
+                        loading_report_needed.visibility = View.VISIBLE
+                    }
+                }
             }
         })
     }
@@ -88,8 +118,12 @@ class ReportNeededFragment : BottomSheetDialogFragment() {
 
     private fun retrieveReturn(data: ResponseJSON?) {
         Utils().toast(requireContext(), data?.message.toString())
-        if (data?.status == getString(R.string.success_).toInt())
-            findNavController().popBackStack(R.id.reportPatientFragment, true)
+        if (data?.status == getString(R.string.success_).toInt()) {
+            if (sessionManager.getRoleUser().equals(getString(R.string.id_user_type_patient)))
+                findNavController().popBackStack(R.id.reportPatientFragment, true)
+            else
+                findNavController().navigateUp()
+        }
     }
 
 }

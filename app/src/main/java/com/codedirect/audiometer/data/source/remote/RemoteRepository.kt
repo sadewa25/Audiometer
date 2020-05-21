@@ -34,4 +34,13 @@ class RemoteRepository(private val apiService: RetrofitClient) {
 
     suspend fun getChangePassword(datas: DataItems) =
         apiService.response().getChangePassword(datas)
+
+    suspend fun companionCreateSymptoms(datas: DataItems) =
+        apiService.response().companionCreateSymptoms(datas)
+
+    suspend fun companionCreateNeeded(datas: DataItems) =
+        apiService.response().companionCreateNeeded(datas)
+
+    suspend fun findPasienByCompanion(datas: DataItems) =
+        apiService.response().findPasienByCompanion(datas)
 }

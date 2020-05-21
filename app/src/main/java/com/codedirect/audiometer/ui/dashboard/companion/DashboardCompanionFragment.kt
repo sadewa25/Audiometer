@@ -61,7 +61,11 @@ class DashboardCompanionFragment : Fragment() {
         })
     }
 
-    private fun navigateToPatient() {}
+    private fun navigateToPatient() {
+        val actions =
+            DashboardCompanionFragmentDirections.actionDashboardCompanionFragmentToPatientCompanionFragment()
+        findNavController().navigate(actions)
+    }
 
     private fun navigateToProfile() {}
 
