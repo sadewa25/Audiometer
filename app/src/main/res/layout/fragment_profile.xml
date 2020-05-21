@@ -48,7 +48,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
             android:text="@string/username"
-
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
             app:layout_constraintStart_toStartOf="parent"

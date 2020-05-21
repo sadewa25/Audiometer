@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="models"
+            type="com.codedirect.audiometer.ui.profile_companion.ProfileCompanionViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.profile_companion_companion_companion.profile_companion_companionCompanionFragment">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded"
+            app:layout_constraintBottom_toTopOf="@+id/gl_profile_companion_companion"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_profile_companion_companion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_profile_companion_companion_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <TextView
+            android:id="@+id/tv_profile_companion_companion_name_title"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:text="@string/username"
+            android:textSize="@dimen/text_default_22"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/gl_profile_companion_companion_center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/gl_profile_companion_companion" />
+
+        <TextView
+            android:id="@+id/tv_profile_companion_companion_name_content"
+            style="@style/TextViewGeneral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/text_default_22"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/gl_profile_companion_companion_center"
+            app:layout_constraintTop_toTopOf="@+id/gl_profile_companion_companion" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_profile_companion_change_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_default"
+            android:fontFamily="@font/quicksand"
+            android:onClick="@{()->models._openChangePassword()}"
+            android:padding="@dimen/margin_default"
+            android:text="@string/change_password"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primaryLightColor"
+            app:cornerRadius="@dimen/margin_default"
+            app:layout_constraintBottom_toTopOf="@+id/btn_profile_companion_logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_profile_companion_logout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_default"
+            android:layout_marginEnd="@dimen/margin_default"
+            android:layout_marginBottom="@dimen/margin_medium"
+            android:fontFamily="@font/quicksand"
+            android:onClick="@{()->models._openProfileCompanion()}"
+            android:padding="@dimen/margin_default"
+            android:text="@string/logout"
+            android:textSize="@dimen/text_default"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primaryDarkColor"
+            app:cornerRadius="@dimen/margin_default"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -67,7 +67,11 @@ class DashboardCompanionFragment : Fragment() {
         findNavController().navigate(actions)
     }
 
-    private fun navigateToProfile() {}
+    private fun navigateToProfile() {
+        val actions =
+            DashboardCompanionFragmentDirections.actionDashboardCompanionFragmentToProfileCompanionFragment()
+        findNavController().navigate(actions)
+    }
 
     private fun navigateToReport() {
         val myItems = listOf(getString(R.string.report_symptoms), getString(R.string.report_needed))

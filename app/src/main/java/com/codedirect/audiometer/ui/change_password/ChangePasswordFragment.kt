@@ -1,4 +1,4 @@
-package com.codedirect.audiometer.ui.profile.change_password
+package com.codedirect.audiometer.ui.change_password
 
 import android.os.Bundle
 import android.view.LayoutInflater

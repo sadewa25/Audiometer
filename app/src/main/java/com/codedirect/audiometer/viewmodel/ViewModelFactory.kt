@@ -10,6 +10,7 @@ import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.patient_companion.PatientCompanionViewModel
 import com.codedirect.audiometer.ui.profile.ProfileViewModel
+import com.codedirect.audiometer.ui.profile_companion.ProfileCompanionViewModel
 import com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
 import com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel
@@ -55,6 +56,8 @@ class ViewModelFactory() : ViewModelProvider.NewInstanceFactory() {
             return ProfileViewModel(appRepository) as T
         } else if (modelClass.isAssignableFrom(PatientCompanionViewModel::class.java)) {
             return PatientCompanionViewModel(appRepository) as T
+        }else if (modelClass.isAssignableFrom(ProfileCompanionViewModel::class.java)) {
+            return ProfileCompanionViewModel(appRepository) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class: " + modelClass.name)
     }

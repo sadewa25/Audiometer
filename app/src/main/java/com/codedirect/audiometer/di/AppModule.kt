@@ -8,6 +8,7 @@ import com.codedirect.audiometer.ui.history.HistoryViewModel
 import com.codedirect.audiometer.ui.login.LoginViewModel
 import com.codedirect.audiometer.ui.patient_companion.PatientCompanionViewModel
 import com.codedirect.audiometer.ui.profile.ProfileViewModel
+import com.codedirect.audiometer.ui.profile_companion.ProfileCompanionViewModel
 import com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel
 import com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel
 import com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel
@@ -27,6 +28,7 @@ object AppModule {
         single { HistoryViewModel(get(), get()) }
         single { ProfileViewModel(get()) }
         single { PatientCompanionViewModel(get()) }
+        single { ProfileCompanionViewModel(get()) }
     }
 
 

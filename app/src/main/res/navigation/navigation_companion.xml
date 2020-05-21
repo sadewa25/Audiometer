@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_dashboardCompanionFragment_to_patientCompanionFragment"
             app:destination="@id/patientCompanionFragment" />
+        <action
+            android:id="@+id/action_dashboardCompanionFragment_to_profileCompanionFragment"
+            app:destination="@id/profileCompanionFragment" />
     </fragment>
     <fragment
         android:id="@+id/reportNeededFragment2"
@@ -29,4 +32,16 @@
         android:id="@+id/patientCompanionFragment"
         android:name="com.codedirect.audiometer.ui.patient_companion.PatientCompanionFragment"
         android:label="PatientCompanionFragment" />
+    <fragment
+        android:id="@+id/profileCompanionFragment"
+        android:name="com.codedirect.audiometer.ui.profile_companion.ProfileCompanionFragment"
+        android:label="ProfileCompanionFragment" >
+        <action
+            android:id="@+id/action_profileCompanionFragment_to_changePasswordFragment2"
+            app:destination="@id/changePasswordFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment2"
+        android:name="com.codedirect.audiometer.ui.change_password.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
 </navigation>
