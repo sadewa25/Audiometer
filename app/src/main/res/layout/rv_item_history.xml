@@ -6,10 +6,10 @@
     <data>
         <variable
             name="menus"
-            type="com.codedirect.audiometer.utils.models.Menus" />
+            type="com.codedirect.pulmos.utils.models.Menus" />
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.history.HistoryViewModel" />
+            type="com.codedirect.pulmos.ui.history.HistoryViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView

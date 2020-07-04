@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.report_patient.ReportPatientViewModel" />
+            type="com.codedirect.pulmos.ui.report_patient.ReportPatientViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -108,7 +108,7 @@
             style="@style/ButtonGeneralStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
+            android:layout_marginTop="@dimen/margin_default"
             android:onClick="@{()->model._openReportPatientSymptoms()}"
             android:padding="@dimen/margin_small"
             android:text="@string/report_symptoms"
@@ -118,14 +118,14 @@
             app:cornerRadius="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_patient_drugs" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_report_patient_needed" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_report_patient_needed"
             style="@style/ButtonGeneralStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_small"
+            android:layout_marginTop="@dimen/margin_medium"
             android:onClick="@{()->model._openReportPatientNeeded()}"
             android:padding="@dimen/margin_small"
             android:text="@string/report_needed"
@@ -135,7 +135,19 @@
             app:cornerRadius="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_patient_drugs" />
+
+        <ProgressBar
+            android:id="@+id/loading_report_patient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primaryDarkColor"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_report_patient_symptoms" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

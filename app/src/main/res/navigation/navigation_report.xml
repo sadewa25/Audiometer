@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/reportPatientFragment"
-        android:name="com.codedirect.audiometer.ui.report_patient.ReportPatientFragment"
+        android:name="com.codedirect.pulmos.ui.report_patient.ReportPatientFragment"
         android:label="ReportPatientFragment">
         <action
             android:id="@+id/action_reportPatientFragment_to_reportSymptomsFragment"
@@ -16,13 +16,13 @@
             android:id="@+id/action_reportPatientFragment_to_reportNeededFragment"
             app:destination="@id/reportNeededFragment" />
     </fragment>
-    <fragment
+    <dialog
         android:id="@+id/reportSymptomsFragment"
-        android:name="com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsFragment"
+        android:name="com.codedirect.pulmos.ui.report_symptoms.ReportSymptomsFragment"
         android:label="ReportSymptomsFragment" />
     <dialog
         android:id="@+id/reportNeededFragment"
-        android:name="com.codedirect.audiometer.ui.report_needed.ReportNeededFragment"
+        android:name="com.codedirect.pulmos.ui.report_needed.ReportNeededFragment"
         tools:layout="@layout/fragment_report_needed"
         android:label="fragment_report_needed" />
 </navigation>

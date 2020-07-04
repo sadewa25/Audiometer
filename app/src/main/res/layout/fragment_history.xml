@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.history.HistoryViewModel" />
+            type="com.codedirect.pulmos.ui.history.HistoryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

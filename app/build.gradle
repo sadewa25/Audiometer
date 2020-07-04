@@ -12,14 +12,15 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.codedirect.audiometer"
+        applicationId "com.codedirect.pulmos"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        buildConfigField("String", "API_KEY", '"$2a$10$0.WlAig6EVWThAKylQ5JEuoTp/QWvGRjiRSfzoxUu8VfkhEpNW2GK"')
+        buildConfigField("String", "API_KEY", '"$2a$10$0.KlAeg6EBWThAKylQ5JEuiTp/PWvGRjiRSfzoxUu8MfkhEpNW2BK"')
+        buildConfigField("String", "BASE_URL", '"http://elbicare.co.id:4500/"')
     }
     buildTypes {
         release {
@@ -31,11 +32,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    dataBinding {
-        enabled = true
-    }
-    viewBinding {
-        enabled = true
+    buildFeatures{
+        dataBinding = true
+        // for view binding :
+        viewBinding = true
     }
 }
 
@@ -83,4 +83,5 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine"
 
     implementation "com.afollestad.material-dialogs:core:$input_dialog"
+    implementation 'com.github.f0ris.sweetalert:library:1.6.2'
 }

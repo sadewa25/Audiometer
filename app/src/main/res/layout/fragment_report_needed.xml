@@ -7,11 +7,11 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.report_needed.ReportNeededViewModel" />
+            type="com.codedirect.pulmos.ui.report_needed.ReportNeededViewModel" />
 
         <variable
             name="data"
-            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
 
     </data>
 

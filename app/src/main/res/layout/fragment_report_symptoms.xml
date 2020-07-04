@@ -7,11 +7,11 @@
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.report_symptoms.ReportSymptomsViewModel" />
+            type="com.codedirect.pulmos.ui.report_symptoms.ReportSymptomsViewModel" />
 
         <variable
             name="data"
-            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
 
     </data>
 
@@ -37,258 +37,38 @@
 
         <!--Cough-->
         <TextView
-            android:id="@+id/tv_report_symptoms_cough"
+            android:id="@+id/tv_report_symptoms"
             style="@style/TextViewGeneral"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/cough"
+            android:text="@string/report_symptoms"
             android:textSize="@dimen/text_default_18"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view" />
 
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_cough"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setCoughOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_cough">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_cough_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_cough_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
-
-        <!--Demam-->
-        <TextView
-            android:id="@+id/tv_report_symptoms_fever"
-            style="@style/TextViewGeneral"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_report_symptoms"
+            style="@style/TextInputLayoutBoxStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/fever"
-            android:textSize="@dimen/text_default_18"
-            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_cough" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms"
+            app:errorEnabled="true">
 
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_fever"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setfeverOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_fever">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_fever_yes"
-                android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ed_report_symptoms"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_fever_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
-
-        <!--Lemas-->
-        <TextView
-            android:id="@+id/tv_report_symptoms_limp"
-            style="@style/TextViewGeneral"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/limp"
-            android:textSize="@dimen/text_default_18"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_fever" />
-
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_limp"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setlimpOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_limp">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_limp_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_limp_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
-
-        <!--Mual-->
-        <TextView
-            android:id="@+id/tv_report_symptoms_nausea"
-            style="@style/TextViewGeneral"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/nausea"
-            android:textSize="@dimen/text_default_18"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_limp" />
-
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_nausea"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setnauseaOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_nausea">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_nausea_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_nausea_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
-
-        <!--Pusing-->
-        <TextView
-            android:id="@+id/tv_report_symptoms_headache"
-            style="@style/TextViewGeneral"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/headache"
-            android:textSize="@dimen/text_default_18"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_nausea" />
-
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_headache"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setheadacheOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_headache">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_headache_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_headache_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
-
-        <!--Sesak-->
-        <TextView
-            android:id="@+id/tv_report_symptoms_breathless"
-            style="@style/TextViewGeneral"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/breathless"
-            android:textSize="@dimen/text_default_18"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_headache" />
-
-        <RadioGroup
-            android:id="@+id/rg_report_symptoms_breathless"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_default"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_default"
-            android:onCheckedChanged="@{(group, checkedId) -> model.setbreathlessOptionsSelected(checkedId)}"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_report_symptoms_breathless">
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_breathless_yes"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/yes_" />
-
-            <RadioButton
-                android:id="@+id/rb_report_symptoms_breathless_no"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/no_" />
-        </RadioGroup>
+                android:hint="@string/input_report_symptoms" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_report_patient_needed"
+            android:id="@+id/btn_report_patient_symptoms"
             style="@style/ButtonGeneralStyle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -302,7 +82,7 @@
             app:cornerRadius="@dimen/margin_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/rg_report_symptoms_breathless" />
+            app:layout_constraintTop_toBottomOf="@+id/ti_report_symptoms" />
 
         <ProgressBar
             android:id="@+id/loading_report_symptoms"

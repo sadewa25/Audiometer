@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.codedirect.audiometer.ui.history.HistoryFragment"
+        android:name="com.codedirect.pulmos.ui.history.HistoryFragment"
         android:label="HistoryFragment" >
         <action
             android:id="@+id/action_historyFragment_to_historyReportNeededFragment"
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/historyReportNeededFragment"
-        android:name="com.codedirect.audiometer.ui.history.report_needed.HistoryReportNeededFragment"
+        android:name="com.codedirect.pulmos.ui.history.report_needed.HistoryReportNeededFragment"
         android:label="fragment_history_report_needed"
         tools:layout="@layout/fragment_history_report_needed" />
     <fragment
         android:id="@+id/historyReportSymptomsFragment"
-        android:name="com.codedirect.audiometer.ui.history.report_symptoms.HistoryReportSymptomsFragment"
+        android:name="com.codedirect.pulmos.ui.history.report_symptoms.HistoryReportSymptomsFragment"
         android:label="fragment_history_report_symptoms"
         tools:layout="@layout/fragment_history_report_symptoms" />
 </navigation>

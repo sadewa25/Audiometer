@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Aplikasi Informasi Status Pasien Covid 19</string>
+    <string name="app_name">Elbicare</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -10,8 +10,8 @@
     <string name="network_unavailable">Tidak Ada Koneksi Internet</string>
     <string name="login_page">Login Page</string>
     <string name="ic_login">Ikon Login</string>
-    <string name="title_hospital">Aplikasi Pelaporan Kondisi Pasien Covid</string>
-    <string name="title_hospital_desc">Poli Paru Dr.Soetomo</string>
+    <string name="title_hospital">Rumah Sakit Dr. Soetomo</string>
+    <string name="title_hospital_desc">Sistem Informasi Kondisi Pasien MDR-TB&amp;Covid-19</string>
     <string name="username">Username</string>
     <string name="id_user_type_patient">0</string>
     <string name="id_user_type_companion">1</string>
@@ -66,4 +66,11 @@
     <string name="address_patient">Alamat: %s</string>
     <string name="steps_patient">Tahapan: %s</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="title_header">Report and Stop Tuberculosis</string>
+    <string name="input_report_symptoms">Masukkan Gejala</string>
+    <string name="password_not_match">Password Tidak Sama</string>
+    <string name="cannot_empty">Tidak Dapat Kosong</string>
+    <string name="wrong_email_format">Format Email Salah</string>
+    <string name="ok_">OK</string>
+    <string name="confirmation">Apakah Anda Yakin?</string>
 </resources>

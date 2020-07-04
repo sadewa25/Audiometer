@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/dashboardPatientFragment"
-        android:name="com.codedirect.audiometer.ui.dashboard.patient.DashboardPatientFragment"
+        android:name="com.codedirect.pulmos.ui.dashboard.patient.DashboardPatientFragment"
         android:label="fragment_dashboard_patient"
         tools:layout="@layout/fragment_dashboard_patient" >
         <action

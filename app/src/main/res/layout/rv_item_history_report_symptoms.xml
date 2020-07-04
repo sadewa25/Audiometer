@@ -7,11 +7,11 @@
 
         <variable
             name="menus"
-            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
 
         <variable
             name="model"
-            type="com.codedirect.audiometer.ui.history.HistoryViewModel" />
+            type="com.codedirect.pulmos.ui.history.HistoryViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView

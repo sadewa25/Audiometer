@@ -7,11 +7,11 @@
 
         <variable
             name="menus"
-            type="com.codedirect.audiometer.data.source.remote.response.DataItems" />
+            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
 
         <variable
             name="models"
-            type="com.codedirect.audiometer.ui.profile.ProfileViewModel" />
+            type="com.codedirect.pulmos.ui.profile.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
