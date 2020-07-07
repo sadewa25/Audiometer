@@ -7,7 +7,7 @@
 
         <variable
             name="menus"
-            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
+            type="com.codedirect.elbicare.data.source.remote.response.DataItems" />
     </data>
 
     <androidx.cardview.widget.CardView

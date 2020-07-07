@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "498779344805",
+    "firebase_url": "https://elbicare-1fcdd.firebaseio.com",
+    "project_id": "elbicare-1fcdd",
+    "storage_bucket": "elbicare-1fcdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498779344805:android:27b676a3ba4b65c629e24c",
+        "android_client_info": {
+          "package_name": "com.codedirect.elbicare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498779344805-m7ki6tlse1vgrpd2pcvavnn2ul26pufj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.codedirect.elbicare",
+            "certificate_hash": "2bae23fa606c660aaa58c707f4866eb54cfbe811"
+          }
+        },
+        {
+          "client_id": "498779344805-8g9v5nfek85k42oikkq8iojq6jq87ra3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1cozMgrF_fcnk2I9vaWPnYRReuOSK06c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498779344805-8g9v5nfek85k42oikkq8iojq6jq87ra3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,10 +6,10 @@
     <data>
         <variable
             name="menus"
-            type="com.codedirect.pulmos.utils.models.Menus" />
+            type="com.codedirect.elbicare.utils.models.Menus" />
         <variable
             name="model"
-            type="com.codedirect.pulmos.ui.history.HistoryViewModel" />
+            type="com.codedirect.elbicare.ui.history.HistoryViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/ic_item_dashboard"
-                android:src="@drawable/ic_home"
+                app:setImgSrc="@{menus.img}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

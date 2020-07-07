@@ -7,11 +7,11 @@
 
         <variable
             name="menus"
-            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
+            type="com.codedirect.elbicare.data.source.remote.response.DataItems" />
 
         <variable
             name="model"
-            type="com.codedirect.pulmos.ui.history.HistoryViewModel" />
+            type="com.codedirect.elbicare.ui.history.HistoryViewModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -31,14 +31,13 @@
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/cough_format, menus.batuk)}"
-                android:textColor="@{menus.batuk.equals(`ya`) ? @color/greenColor : @color/redColor}"
+                android:text="@string/symptoms"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default_18"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/gl_item_history_report"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_times"
-                tools:text="Batuk" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_item_history_report_fever"
@@ -46,91 +45,13 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/fever_format, menus.demam)}"
-                android:textColor="@{menus.demam.equals(`ya`) ? @color/greenColor : @color/redColor}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_cough"
-                tools:text="Demam" />
-
-            <TextView
-                android:id="@+id/tv_item_history_report_limp"
-                style="@style/TextViewGeneral"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/limp_format, menus.lemas)}"
-                android:textColor="@{menus.lemas.equals(`ya`) ? @color/greenColor : @color/redColor}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_fever"
-                tools:text="Lemas" />
-
-            <TextView
-                android:id="@+id/tv_item_history_report_nausea"
-                style="@style/TextViewGeneral"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/nausea_format, menus.mual)}"
-                android:textColor="@{menus.mual.equals(`ya`) ? @color/greenColor : @color/redColor}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_times"
-                tools:text="Mual" />
-
-            <TextView
-                android:id="@+id/tv_item_history_report_headache"
-                style="@style/TextViewGeneral"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/headache_format, menus.pusing)}"
-                android:textColor="@{menus.pusing.equals(`ya`) ? @color/greenColor : @color/redColor}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_breathless"
-                tools:text="Pusing" />
-
-            <TextView
-                android:id="@+id/tv_item_history_report_breathless"
-                style="@style/TextViewGeneral"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/breathless_format, menus.sesak)}"
-                android:textColor="@{menus.sesak.equals(`ya`) ? @color/greenColor : @color/redColor}"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/gl_item_history_report"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_nausea"
-                tools:text="Sesak Nafas" />
-
-            <TextView
-                android:id="@+id/tv_item_history_report_times"
-                style="@style/TextViewGeneral"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="@{menus.time}"
-                android:textAlignment="center"
-                android:textColor="@color/primaryDarkColor"
+                android:text="@{menus.gejala}"
                 android:textSize="@dimen/text_default"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:text="Times" />
-
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/gl_item_history_report"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintGuide_percent="0.5" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_cough"
+                tools:text="Demam" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

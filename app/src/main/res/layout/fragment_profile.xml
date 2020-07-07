@@ -7,11 +7,11 @@
 
         <variable
             name="menus"
-            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
+            type="com.codedirect.elbicare.data.source.remote.response.DataItems" />
 
         <variable
             name="models"
-            type="com.codedirect.pulmos.ui.profile.ProfileViewModel" />
+            type="com.codedirect.elbicare.ui.profile.ProfileViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5" />
+            app:layout_constraintGuide_percent="0.35" />
 
         <TextView
             android:id="@+id/tv_profile_name_title"
@@ -84,7 +84,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).namaPendamping}"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).pmo}"
             android:textAlignment="textEnd"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -147,7 +147,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="@string/category"
+            android:text="@string/dokter"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/gl_profile_center"
             app:layout_constraintStart_toStartOf="parent"
@@ -159,7 +159,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).kategori}"
+            android:text="@{models.dataProfile.empty ? `` : models.dataProfile.get(0).dokter}"
             android:textAlignment="textEnd"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -206,6 +206,7 @@
             android:onClick="@{()->models._openChangePassword()}"
             android:padding="@dimen/margin_default"
             android:text="@string/change_password"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_default"
             android:textStyle="bold"
             app:backgroundTint="@color/primaryLightColor"
@@ -226,6 +227,7 @@
             android:onClick="@{()->models._openProfile()}"
             android:padding="@dimen/margin_default"
             android:text="@string/logout"
+            android:textColor="@android:color/white"
             android:textSize="@dimen/text_default"
             android:textStyle="bold"
             app:backgroundTint="@color/primaryDarkColor"

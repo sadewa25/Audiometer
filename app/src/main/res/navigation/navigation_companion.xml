@@ -5,7 +5,7 @@
 
     <fragment
         android:id="@+id/dashboardCompanionFragment"
-        android:name="com.codedirect.pulmos.ui.dashboard.companion.DashboardCompanionFragment"
+        android:name="com.codedirect.elbicare.ui.dashboard.companion.DashboardCompanionFragment"
         android:label="DashboardCompanionFragment" >
         <action
             android:id="@+id/action_dashboardCompanionFragment_to_reportNeededFragment2"
@@ -22,19 +22,19 @@
     </fragment>
     <fragment
         android:id="@+id/reportNeededFragment2"
-        android:name="com.codedirect.pulmos.ui.report_needed.ReportNeededFragment"
+        android:name="com.codedirect.elbicare.ui.report_needed.ReportNeededFragment"
         android:label="ReportNeededFragment" />
     <fragment
         android:id="@+id/reportSymptomsFragment2"
-        android:name="com.codedirect.pulmos.ui.report_symptoms.ReportSymptomsFragment"
+        android:name="com.codedirect.elbicare.ui.report_symptoms.ReportSymptomsFragment"
         android:label="ReportSymptomsFragment" />
     <fragment
         android:id="@+id/patientCompanionFragment"
-        android:name="com.codedirect.pulmos.ui.patient_companion.PatientCompanionFragment"
+        android:name="com.codedirect.elbicare.ui.patient_companion.PatientCompanionFragment"
         android:label="PatientCompanionFragment" />
     <fragment
         android:id="@+id/profileCompanionFragment"
-        android:name="com.codedirect.pulmos.ui.profile_companion.ProfileCompanionFragment"
+        android:name="com.codedirect.elbicare.ui.profile_companion.ProfileCompanionFragment"
         android:label="ProfileCompanionFragment" >
         <action
             android:id="@+id/action_profileCompanionFragment_to_changePasswordFragment2"
@@ -42,6 +42,6 @@
     </fragment>
     <dialog
         android:id="@+id/changePasswordFragment2"
-        android:name="com.codedirect.pulmos.ui.change_password.ChangePasswordFragment"
+        android:name="com.codedirect.elbicare.ui.change_password.ChangePasswordFragment"
         android:label="ChangePasswordFragment" />
 </navigation>

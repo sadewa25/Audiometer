@@ -7,7 +7,7 @@
 
         <variable
             name="models"
-            type="com.codedirect.pulmos.ui.profile_companion.ProfileCompanionViewModel" />
+            type="com.codedirect.elbicare.ui.profile_companion.ProfileCompanionViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

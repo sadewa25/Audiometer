@@ -7,11 +7,11 @@
 
         <variable
             name="model"
-            type="com.codedirect.pulmos.ui.report_symptoms.ReportSymptomsViewModel" />
+            type="com.codedirect.elbicare.ui.report_symptoms.ReportSymptomsViewModel" />
 
         <variable
             name="data"
-            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
+            type="com.codedirect.elbicare.data.source.remote.response.DataItems" />
 
     </data>
 

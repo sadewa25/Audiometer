@@ -6,16 +6,19 @@
     app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.codedirect.pulmos.ui.splashscreen.SplashScreenFragment"
+        android:name="com.codedirect.elbicare.ui.splashscreen.SplashScreenFragment"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" >
         <action
             android:id="@+id/action_splashScreenFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_bottomAct"
+            app:destination="@id/bottomAct" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.codedirect.pulmos.ui.login.LoginFragment"
+        android:name="com.codedirect.elbicare.ui.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -24,7 +27,14 @@
         <action
             android:id="@+id/action_loginFragment_to_navigation_companion"
             app:destination="@id/navigation_companion" />
+        <action
+            android:id="@+id/action_loginFragment_to_bottomAct"
+            app:destination="@id/bottomAct" />
     </fragment>
     <include app:graph="@navigation/navigation_patient" />
     <include app:graph="@navigation/navigation_companion" />
+    <activity
+        android:id="@+id/bottomAct"
+        android:name="com.codedirect.elbicare.ui.main.BottomAct"
+        android:label="BottomAct" />
 </navigation>

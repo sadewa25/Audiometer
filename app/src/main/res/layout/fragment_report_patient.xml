@@ -7,7 +7,7 @@
 
         <variable
             name="model"
-            type="com.codedirect.pulmos.ui.report_patient.ReportPatientViewModel" />
+            type="com.codedirect.elbicare.ui.report_patient.ReportPatientViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -39,7 +39,7 @@
             android:text="@string/condition"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/text_default_18"
+            android:textSize="@dimen/text_default_22"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
             android:layout_marginTop="@dimen/margin_small"
             android:textAlignment="center"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/text_default_22"
+            android:textSize="@dimen/text_default_18"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_default"
-            android:text="@string/title_status"
+            android:text="@string/title_skip_drugs"
             android:textAlignment="center"
             android:textSize="@dimen/text_default_18"
             android:textStyle="bold"
@@ -95,7 +95,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_small"
-            android:text="@string/title_skip_drugs"
+            android:text="@string/title_drink_drugs"
             android:textAlignment="center"
             android:textSize="@dimen/text_default_18"
             android:textStyle="bold"

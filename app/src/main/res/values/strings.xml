@@ -24,7 +24,8 @@
     <string name="title_covid">Covid 19</string>
     <string name="report_symptoms">Laporkan Gejala</string>
     <string name="title_status">Status: %1$s </string>
-    <string name="title_skip_drugs">Skip Obat: %1$s </string>
+    <string name="title_skip_drugs">Jumlah Obat Lewat: %1$s </string>
+    <string name="title_drink_drugs">Jumlah Obat Minum: %1$s </string>
     <string name="report_needed">Laporkan Kebutuhan</string>
     <string name="cough">Batuk</string>
     <string name="cough_format">Batuk: %s</string>
@@ -73,4 +74,13 @@
     <string name="wrong_email_format">Format Email Salah</string>
     <string name="ok_">OK</string>
     <string name="confirmation">Apakah Anda Yakin?</string>
+    <string name="dokter">Dokter</string>
+    <string name="symptoms">Gejala</string>
+    <string name="drink_status">Status Minum</string>
+    <string name="importance_condition">Keadaan Khusus</string>
+    <string name="title_activity_bottom">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="history">Riwayat</string>
 </resources>

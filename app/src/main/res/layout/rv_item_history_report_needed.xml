@@ -7,7 +7,7 @@
 
         <variable
             name="menus"
-            type="com.codedirect.pulmos.data.source.remote.response.DataItems" />
+            type="com.codedirect.elbicare.data.source.remote.response.DataItems" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -22,12 +22,19 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_small">
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_item_history_needed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
             <TextView
                 android:id="@+id/tv_item_history_report_needed_time"
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@{menus.time}"
+                android:text="@{menus.nama}"
                 android:textAlignment="center"
                 android:textColor="@color/primaryDarkColor"
                 android:textSize="@dimen/text_default"
@@ -38,40 +45,65 @@
                 tools:text="2020" />
 
             <TextView
-                android:id="@+id/tv_item_history_report_needed_type"
+                android:id="@+id/tv_item_history_report_needed_status_title"
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@{String.format(@string/type_needed, menus.jenisKebutuhan)}"
+                android:layout_marginTop="@dimen/margin_default"
+                android:text="@string/drink_status"
+                android:textAlignment="center"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/gl_item_history_needed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_time"
-                tools:text="Batuk" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_time" />
 
             <TextView
-                android:id="@+id/tv_item_history_report_needed_desc"
+                android:id="@+id/tv_item_history_report_needed_status_content"
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:text="@string/desc"
+                android:layout_marginTop="@dimen/margin_default"
+                android:text="@{menus.statusMinum}"
+                android:textAlignment="center"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_type" />
+                app:layout_constraintStart_toStartOf="@+id/gl_item_history_needed"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_time" />
 
             <TextView
-                android:id="@+id/tv_item_history_report_needed_desc_content"
+                android:id="@+id/tv_item_history_report_needed_important_title"
                 style="@style/TextViewGeneral"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_small"
-                android:text="@{menus.keterangan}"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/importance_condition"
+                android:textAlignment="center"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/gl_item_history_needed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_desc" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_status_title" />
+
+            <TextView
+                android:id="@+id/tv_item_history_report_needed_important_content"
+                style="@style/TextViewGeneral"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@{menus.keadaanKhusus}"
+                android:textAlignment="center"
+                android:textColor="@color/primaryDarkColor"
+                android:textSize="@dimen/text_default"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/gl_item_history_needed"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_history_report_needed_status_content" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

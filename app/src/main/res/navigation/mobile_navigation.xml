@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/reportPatientFragment">
+
+    <fragment
+        android:id="@+id/reportPatientFragment"
+        android:name="com.codedirect.elbicare.ui.report_patient.ReportPatientFragment"
+        tools:layout="@layout/fragment_report_patient"
+        android:label="@string/title_home" >
+        <action
+            android:id="@+id/action_reportPatientFragment_to_reportSymptomsFragment"
+            app:destination="@id/reportSymptomsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.codedirect.elbicare.ui.history.HistoryFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_historyReportSymptomsFragment"
+            app:destination="@id/historyReportSymptomsFragment" />
+        <action
+            android:id="@+id/action_historyFragment_to_historyReportNeededFragment"
+            app:destination="@id/historyReportNeededFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.codedirect.elbicare.ui.profile.ProfileFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_navigation_graph"
+            app:destination="@id/navigation_graph" />
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/reportSymptomsFragment"
+        android:name="com.codedirect.elbicare.ui.report_symptoms.ReportSymptomsFragment"
+        android:label="ReportSymptomsFragment" />
+    <fragment
+        android:id="@+id/historyReportNeededFragment"
+        android:name="com.codedirect.elbicare.ui.history.report_needed.HistoryReportNeededFragment"
+        android:label="HistoryReportNeededFragment" />
+    <fragment
+        android:id="@+id/historyReportSymptomsFragment"
+        android:name="com.codedirect.elbicare.ui.history.report_symptoms.HistoryReportSymptomsFragment"
+        android:label="HistoryReportSymptomsFragment" />
+    <include app:graph="@navigation/navigation_graph" />
+    <dialog
+        android:id="@+id/changePasswordFragment"
+        android:name="com.codedirect.elbicare.ui.change_password.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+</navigation>
